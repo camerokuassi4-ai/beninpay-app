@@ -1,331 +1,439 @@
 <!DOCTYPE html>
 <html class="light" lang="fr">
+
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>BeninPay - L'argent sans frontières au Bénin</title>
-<link href="https://fonts.googleapis.com" rel="preconnect"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<script id="tailwind-config">
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>BeninPay - Votre argent, partout au Bénin</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Sora:wght@400;600;700&amp;display=swap"
+        rel="stylesheet">
+
+    <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
             theme: {
                 extend: {
-                    colors: {
-                        "surface": "#f8f9ff",
-                        "on-primary-fixed": "#002111",
-                        "inverse-primary": "#4cdf98",
-                        "on-error-container": "#93000a",
-                        "on-error": "#ffffff",
-                        "on-surface-variant": "#3c4a40",
-                        "error-container": "#ffdad6",
-                        "on-secondary-fixed": "#131b2e",
-                        "secondary": "#565e74",
-                        "on-background": "#0b1c30",
-                        "on-primary": "#ffffff",
-                        "secondary-container": "#dae2fd",
-                        "on-tertiary-fixed-variant": "#653e00",
-                        "surface-variant": "#d3e4fe",
-                        "on-secondary": "#ffffff",
-                        "primary": "#006d43",
-                        "outline-variant": "#bbcabe",
-                        "secondary-fixed-dim": "#bec6e0",
-                        "inverse-surface": "#213145",
-                        "on-surface": "#0b1c30",
-                        "on-secondary-fixed-variant": "#3f465c",
-                        "secondary-fixed": "#dae2fd",
-                        "surface-tint": "#006d43",
+                    "colors": {
+                        "surface-container-high": "#dce9ff",
                         "surface-container": "#e5eeff",
-                        "inverse-on-surface": "#eaf1ff",
-                        "surface-container-highest": "#d3e4fe",
-                        "primary-fixed": "#6dfcb2",
-                        "tertiary-container": "#e08f00",
-                        "surface-container-lowest": "#ffffff",
-                        "on-tertiary-container": "#503100",
-                        "error": "#ba1a1a",
-                        "on-tertiary-fixed": "#2a1700",
-                        "background": "#f8f9ff",
-                        "outline": "#6c7b70",
-                        "tertiary-fixed-dim": "#ffb95f",
+                        "on-secondary-fixed-variant": "#3f465c",
+                        "on-background": "#0b1c30",
+                        "surface": "#f8f9ff",
                         "surface-dim": "#cbdbf5",
+                        "tertiary-fixed": "#ffddb8",
+                        "inverse-primary": "#4cdf98",
+                        "on-error": "#ffffff",
+                        "outline-variant": "#bbcabe",
+                        "tertiary-fixed-dim": "#ffb95f",
+                        "on-tertiary-container": "#503100",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "background": "#f8f9ff",
+                        "surface-container-low": "#eff4ff",
+                        "on-surface": "#0b1c30",
                         "primary-container": "#00b875",
-                        "on-primary-fixed-variant": "#005231",
+                        "secondary": "#565e74",
+                        "tertiary-container": "#e08f00",
+                        "surface-variant": "#d3e4fe",
+                        "on-primary": "#ffffff",
+                        "primary-fixed": "#6dfcb2",
+                        "secondary-fixed-dim": "#bec6e0",
+                        "on-error-container": "#93000a",
+                        "secondary-fixed": "#dae2fd",
+                        "error": "#ba1a1a",
+                        "on-tertiary-fixed-variant": "#653e00",
+                        "on-secondary": "#ffffff",
+                        "surface-tint": "#006d43",
+                        "on-secondary-fixed": "#131b2e",
+                        "error-container": "#ffdad6",
+                        "on-primary-container": "#004126",
+                        "inverse-surface": "#213145",
+                        "tertiary": "#855300",
                         "surface-bright": "#f8f9ff",
                         "on-secondary-container": "#5c647a",
-                        "tertiary-fixed": "#ffddb8",
-                        "surface-container-high": "#dce9ff",
-                        "surface-container-low": "#eff4ff",
-                        "on-tertiary": "#ffffff",
-                        "on-primary-container": "#004126",
+                        "secondary-container": "#dae2fd",
+                        "inverse-on-surface": "#eaf1ff",
+                        "outline": "#6c7b70",
+                        "primary": "#006d43",
                         "primary-fixed-dim": "#4cdf98",
-                        "tertiary": "#855300"
+                        "on-surface-variant": "#3c4a40",
+                        "on-tertiary-fixed": "#2a1700",
+                        "surface-container-highest": "#d3e4fe",
+                        "on-primary-fixed-variant": "#005231",
+                        "on-primary-fixed": "#002111"
                     },
-                    borderRadius: {
+                    "borderRadius": {
                         "DEFAULT": "0.25rem",
                         "lg": "0.5rem",
                         "xl": "0.75rem",
                         "full": "9999px",
-                        "fintech": "16px"
+                        "2xl": "1rem",
+                        "3xl": "1.5rem"
                     },
-                    spacing: {
-                        "xs": "8px",
-                        "lg": "24px",
-                        "md": "16px",
+                    "spacing": {
                         "base": "4px",
-                        "xl": "32px",
+                        "md": "16px",
+                        "xs": "8px",
                         "sm": "12px",
                         "container-margin": "20px",
+                        "lg": "24px",
+                        "xl": "32px",
+                        "2xl": "48px",
+                        "3xl": "64px",
                         "gutter": "16px"
                     },
-                    fontFamily: {
-                        "price-display": ["Sora"],
+                    "fontFamily": {
                         "headline-md": ["Sora"],
-                        "label-md": ["Inter"],
-                        "headline-sm": ["Sora"],
-                        "body-md": ["Inter"],
-                        "body-lg": ["Inter"],
                         "display-lg": ["Sora"],
-                        "body-sm": ["Inter"]
-                    },
-                    fontSize: {
-                        "price-display": ["36px", { lineHeight: "44px", letterSpacing: "-1px", fontWeight: "700" }],
-                        "headline-md": ["24px", { lineHeight: "32px", fontWeight: "600" }],
-                        "label-md": ["12px", { lineHeight: "16px", letterSpacing: "0.05em", fontWeight: "600" }],
-                        "headline-sm": ["20px", { lineHeight: "28px", fontWeight: "600" }],
-                        "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
-                        "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
-                        "display-lg": ["32px", { lineHeight: "40px", letterSpacing: "-0.02em", fontWeight: "700" }],
-                        "body-sm": ["14px", { lineHeight: "20px", fontWeight: "400" }]
-                    },
-                    animation: {
-                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
-                        'float': 'float 5s ease-in-out infinite',
-                        'float-delayed-1': 'float 6s ease-in-out infinite 1s',
-                        'float-delayed-2': 'float 5.5s ease-in-out infinite 2s',
-                        'float-delayed-3': 'float 6.5s ease-in-out infinite 1.5s',
-                    },
-                    keyframes: {
-                        fadeInUp: {
-                            '0%': { opacity: '0', transform: 'translateY(20px)' },
-                            '100%': { opacity: '1', transform: 'translateY(0)' },
-                        },
-                        float: {
-                            '0%, 100%': { transform: 'translateY(0)' },
-                            '50%': { transform: 'translateY(-10px)' },
-                        }
+                        "body-md": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "price-display": ["Sora"],
+                        "headline-sm": ["Sora"],
+                        "body-lg": ["Inter"],
+                        "label-md": ["Inter"]
                     }
                 }
             }
         }
     </script>
-<style>
+    <style>
         .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .icon-filled {
             font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
+
         .glass-panel {
-            background: rgba(255, 255, 255, 0.7);
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+        }
+
+        .glass-card {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.6) 100%);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            box-shadow: 0 8px 32px 0 rgba(0, 109, 67, 0.05);
         }
-        #glcanvas {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            z-index: -1;
-            pointer-events: none;
+
+        .mesh-gradient-1 {
+            background-color: #f8f9ff;
+            background-image: radial-gradient(at 40% 20%, hsla(158, 100%, 74%, 0.15) 0px, transparent 50%),
+                radial-gradient(at 80% 0%, hsla(226, 89%, 91%, 0.3) 0px, transparent 50%),
+                radial-gradient(at 0% 50%, hsla(226, 89%, 91%, 0.3) 0px, transparent 50%),
+                radial-gradient(at 80% 50%, hsla(158, 100%, 74%, 0.15) 0px, transparent 50%),
+                radial-gradient(at 0% 100%, hsla(226, 89%, 91%, 0.3) 0px, transparent 50%),
+                radial-gradient(at 80% 100%, hsla(158, 100%, 74%, 0.15) 0px, transparent 50%),
+                radial-gradient(at 0% 0%, hsla(226, 89%, 91%, 0.3) 0px, transparent 50%);
         }
-        body {
-            min-height: max(884px, 100dvh);
+
+        .mesh-gradient-2 {
+            background-color: #ffffff;
+            background-image: radial-gradient(at 100% 0%, hsla(158, 100%, 74%, 0.1) 0px, transparent 50%),
+                radial-gradient(at 0% 100%, hsla(226, 89%, 91%, 0.2) 0px, transparent 50%);
         }
     </style>
 </head>
-<body class="dark:bg-slate-900 dark:text-slate-100 transition-colors duration-200 text-on-surface min-h-screen flex flex-col font-body-md antialiased selection:bg-primary-container selection:text-on-primary-container overflow-x-hidden bg-transparent">
 
-<canvas id="glcanvas"></canvas>
-
-<header class="w-full py-md px-container-margin md:px-xl flex justify-between items-center z-50 fixed top-0 glass-panel">
-    <div class="flex items-center gap-2">
-        <div class="w-10 h-10 rounded-xl bg-primary flex items-center justify-center text-on-primary shadow-[0_4px_12px_rgba(0,184,117,0.3)]">
-            <span class="material-symbols-outlined text-[24px]">account_balance_wallet</span>
-        </div>
-        <span class="font-headline-md text-headline-md text-primary tracking-tight">BeninPay</span>
-    </div>
-    <div class="flex items-center gap-sm">
-        <div class="relative group cursor-pointer">
-            <div class="flex items-center gap-1 px-3 py-1.5 rounded-full bg-surface-container-low border border-surface-container-highest hover:bg-surface-container transition-colors">
-                <span class="material-symbols-outlined text-[16px] text-secondary">language</span>
-                <span class="font-label-md text-label-md text-secondary">FR</span>
-                <span class="material-symbols-outlined text-[16px] text-secondary">arrow_drop_down</span>
+<body class="bg-surface text-on-surface font-body-md antialiased overflow-x-hidden">
+    <!-- TopNavBar -->
+    <nav class="fixed top-0 w-full z-50 glass-panel shadow-[0_2px_10px_rgba(0,0,0,0.02)] transition-all duration-300">
+        <div class="flex justify-between items-center h-20 px-container-margin max-w-7xl mx-auto">
+            <div
+                class="font-display-lg text-display-lg text-primary italic flex items-center gap-xs select-none cursor-default">
+                BeninPay
             </div>
-            <div class="absolute right-0 mt-1 w-24 bg-surface-container-lowest border border-surface-container-highest rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-                <div class="py-1">
-                    <div class="px-3 py-2 font-label-md text-label-md text-primary bg-primary-container/10 cursor-pointer">Français</div>
-                    <div class="px-3 py-2 font-label-md text-label-md text-on-surface hover:bg-surface-container-low cursor-pointer">Fon</div>
+            <div class="hidden md:flex items-center gap-2xl">
+                <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors hover:opacity-80 active:scale-95 duration-150 uppercase tracking-wider"
+                    href="#services">Services</a>
+                <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors hover:opacity-80 active:scale-95 duration-150 uppercase tracking-wider"
+                    href="#securite">Sécurité</a>
+                <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors hover:opacity-80 active:scale-95 duration-150 uppercase tracking-wider"
+                    href="#aide">Aide</a>
+            </div>
+            <div class="flex items-center gap-md">
+                <!-- Sélecteur de langues -->
+                <div class="relative group hidden md:block">
+                    <button
+                        class="flex items-center gap-xs font-label-md text-label-md text-primary hover:bg-surface-variant/50 px-sm py-xs rounded-full transition-colors">
+                        <span class="material-symbols-outlined text-[18px]">language</span>
+                        <span>FR</span>
+                        <span class="material-symbols-outlined text-[16px]">arrow_drop_down</span>
+                    </button>
+                    <div
+                        class="absolute right-0 mt-1 w-36 bg-white rounded-2xl shadow-lg border border-surface-variant/50 hidden group-hover:block overflow-hidden z-50">
+                        <a href="?lang=fr"
+                            class="flex items-center px-lg py-sm text-label-md text-on-surface hover:bg-surface-variant/30 transition-colors">
+                            🇫🇷 Français
+                        </a>
+                        <a href="?lang=en"
+                            class="flex items-center px-lg py-sm text-label-md text-on-surface hover:bg-surface-variant/30 transition-colors">
+                            🇬🇧 English
+                        </a>
+                        <a href="?lang=es"
+                            class="flex items-center px-lg py-sm text-label-md text-on-surface hover:bg-surface-variant/30 transition-colors">
+                            🇪🇸 Español
+                        </a>
+                    </div>
                 </div>
+
+                <!-- Bouton Se connecter vers connexion/code.html -->
+                <a href="../connexion/code.html" class="hidden md:block font-label-md text-label-md text-primary border border-primary/30 px-lg py-sm rounded-full hover:bg-primary/5 hover:border-primary transition-all duration-300">Se connecter</a>
+                <!-- Bouton Créer un compte vers inscription_kyc/code.html -->
+                <a href="../inscription_kyc/code.html" class="font-label-md text-label-md bg-primary text-on-primary px-lg py-sm rounded-full hover:bg-primary/90 hover:shadow-lg hover:shadow-primary/20 hover:-translate-y-0.5 transition-all active:scale-95 duration-300">Créer un compte</a>
+                <button
+                    class="md:hidden flex items-center text-primary ml-xs p-xs rounded-full hover:bg-surface-variant/50">
+                    <span class="material-symbols-outlined">menu</span>
+                </button>
             </div>
         </div>
-    </div>
-</header>
+    </nav>
 
-<main class="flex-grow flex flex-col justify-center items-center pt-[100px] pb-xl px-container-margin md:px-xl max-w-7xl mx-auto w-full">
-    <div class="grid grid-cols-1 md:grid-cols-12 gap-lg w-full h-full min-h-[calc(100vh-140px)]">
-        
-        <!-- Left Column: Text & Buttons -->
-        <div class="md:col-span-5 lg:col-span-5 flex flex-col justify-center gap-xl z-10">
-            <div class="space-y-6 opacity-0 animate-fade-in-up" style="animation-delay: 0.1s;">
-                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container-high border border-surface-container-highest w-max">
-                    <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
-                    <span class="font-label-md text-label-md text-secondary uppercase tracking-wider">Nouveau au Bénin</span>
-                </div>
-                <h1 class="font-display-lg text-display-lg text-on-surface md:text-[56px] md:leading-[1.1] tracking-tight text-balance">
-                    L'argent sans frontières au Bénin
+    <!-- Hero Section -->
+    <header
+        class="relative overflow-hidden mesh-gradient-1 pt-32 pb-2xl md:pt-36 md:pb-[100px] lg:pt-40 lg:pb-[140px] min-h-[90vh] flex items-center">
+        <div
+            class="max-w-7xl mx-auto px-container-margin grid grid-cols-1 lg:grid-cols-12 gap-xl items-center relative z-10 w-full">
+            <div class="space-y-lg text-center lg:text-left lg:col-span-5 relative z-20">
+                <h1
+                    class="font-display-lg text-[40px] leading-[48px] md:text-[56px] md:leading-[64px] lg:text-[64px] lg:leading-[72px] text-primary tracking-tight text-balance drop-shadow-sm">
+                    Votre argent, partout au Bénin, sans agence.
                 </h1>
-                <p class="font-body-lg text-body-lg text-on-surface-variant max-w-md leading-relaxed">
-                    Transférez de l'argent instantanément et à frais réduits entre MTN MoMo, Moov Money, Celtiis et vos banques locales.
+                <p
+                    class="font-body-lg text-body-lg text-on-surface-variant max-w-xl mx-auto lg:mx-0 text-balance opacity-90 leading-relaxed">
+                    L'application unique pour gérer vos finances. Connectez instantanément vos portefeuilles mobiles et
+                    vos comptes bancaires. Payez, transférez et épargnez en toute simplicité.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-md justify-center lg:justify-start pt-md">
+                    <!-- Bouton d'action principal vers inscription_kyc/code.html -->
+                    <a href="../inscription_kyc/code.html" class="inline-flex justify-center items-center h-[56px] px-xl bg-primary text-on-primary font-label-md text-label-md rounded-full shadow-[0_8px_24px_rgba(0,109,67,0.25)] hover:bg-primary/90 hover:shadow-[0_12px_32px_rgba(0,109,67,0.35)] hover:-translate-y-1 transition-all active:scale-95 duration-300">Créer un compte gratuit</a>
+                    <a class="inline-flex justify-center items-center h-[56px] px-xl glass-panel text-primary font-label-md text-label-md rounded-full hover:bg-white/80 transition-all active:scale-95 duration-300"
+                        href="#services">
+                        En savoir plus
+                    </a>
+                </div>
+            </div>
+
+            <div class="lg:col-span-7 relative w-full h-[500px] lg:h-[700px] lg:-mr-3xl lg:-ml-xl z-10 mt-xl lg:mt-0">
+                <div
+                    class="absolute inset-0 rounded-[2.5rem] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.15)] transform lg:rotate-2 hover:rotate-0 transition-transform duration-700 ease-out">
+                    <img class="w-full h-full object-cover scale-105 hover:scale-100 transition-transform duration-700 ease-out"
+                        alt="Businesswoman avec smartphone"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCsDDCEqSTJZeRXokISaQ_keF3xDyPE9c7vlbQKfZpSn-7PUeefGun8cMwB11yqd48M4Ig2GUHyoJOUE1AbGFJ65Rf3eJTy4UDbGm_2AZNDfv-NgUzPj10X1wgTgpjSERXfqE5gSs4-ixRNjNOMP1JuVfzrSTBdQjfSbPZZiu-a64bqnM06KJAiduZEA6_PJRYK_KbT0dudwc6sVdQdVvzg4MxmTLXP0iqqTg0JszMYvjM6uu_-g9Fc6Q">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Services Section -->
+    <section class="py-[120px] mesh-gradient-2 relative" id="services">
+        <div class="max-w-7xl mx-auto px-container-margin relative z-10">
+            <div class="text-center mb-3xl">
+                <span
+                    class="font-label-md text-primary tracking-widest uppercase text-[12px] mb-xs block">Fonctionnalités
+                    Premium</span>
+                <h2 class="font-headline-md text-[40px] leading-[48px] text-on-surface mb-sm">Nos Services</h2>
+                <p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mx-auto opacity-90">
+                    Une gamme complète de services financiers pensés pour votre quotidien. Simplifiez vos transactions
+                    avec BeninPay.
                 </p>
             </div>
-
-            <!-- BOUTONS AVEC LIENS DE NAVIGATION PROPRES -->
-            <div class="flex flex-col sm:flex-row gap-sm opacity-0 animate-fade-in-up" style="animation-delay: 0.3s;">
-                <a href="../inscription_kyc/code.html" class="h-[56px] px-lg bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md rounded-fintech shadow-[0_8px_24px_rgba(0,184,117,0.4)] transition-all transform hover:-translate-y-1 hover:shadow-[0_12px_32px_rgba(0,184,117,0.5)] active:translate-y-0 active:scale-95 flex items-center justify-center gap-2">
-                    <span>Créer un compte gratuit</span>
-                    <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
-                </a>
-                <a href="../connexion/code.html" class="h-[56px] px-lg bg-white dark:bg-slate-800/50 backdrop-blur-sm border-[1.5px] border-surface-container-highest text-on-surface hover:bg-white dark:bg-slate-800/80 font-label-md text-label-md rounded-fintech transition-all flex items-center justify-center shadow-sm hover:shadow-md">
-                    Se connecter
-                </a>
-            </div>
-
-            <!-- Trust Indicators -->
-            <div class="mt-8 flex items-center gap-4 pt-6 border-t border-surface-container-highest opacity-0 animate-fade-in-up" style="animation-delay: 0.5s;">
-                <div class="flex -space-x-2">
-                    <div class="w-8 h-8 rounded-full bg-primary text-on-primary border-2 border-surface flex items-center justify-center z-30 font-bold text-[10px]">
-                        AM
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-xl">
+                <div class="glass-card rounded-3xl p-xl group transition-all duration-500">
+                    <div
+                        class="w-20 h-20 rounded-2xl bg-gradient-to-br from-primary-container/30 to-primary/5 flex items-center justify-center mb-lg shadow-sm border border-white/50">
+                        <img class="w-12 h-12 object-contain mix-blend-multiply" alt="Transferts instantanés"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMZhkbUPpslPCYMo7UbjLQNtA3EMXZmoC6gTLM_jLoNFYFGEjK1tC5UoMaioy69wqcFfJzV0jwSRLAjCqrxwfE_DLmk8l4RQqyzFTNAc7mAT98M0Q2PmHeBvmGMttrSkuIRCnMHf0rwhPBOCkfSkw6eVfHWbm0ZAaYGIStjsDrPd1j5PBafn-EjhY5AUt4OkVZxeAuBoF-EIMKvSDIfOHwwhAgh9MuSc4uV7x1nG1al_FeTCBx0lfWxg">
                     </div>
-                    <div class="w-8 h-8 rounded-full bg-tertiary text-on-tertiary border-2 border-surface flex items-center justify-center z-20 font-bold text-[10px]">
-                        KD
-                    </div>
-                    <div class="w-8 h-8 rounded-full bg-[#0055A5] text-white border-2 border-surface flex items-center justify-center z-10 font-bold text-[10px]">
-                        SO
-                    </div>
+                    <h3 class="font-headline-sm text-[22px] text-on-surface mb-sm">
+                        Transferts Instantanés
+                    </h3>
+                    <p class="font-body-sm text-body-md text-on-surface-variant leading-relaxed">
+                        Envoyez de l'argent entre tous les réseaux mobiles (MTN, Moov, Celtiis) et vers n'importe quel
+                        compte bancaire instantanément, 24/7.
+                    </p>
                 </div>
-                <p class="font-label-md text-label-md text-secondary">Rejoint par +10,000 béninois</p>
-            </div>
-        </div>
-
-        <!-- Right Column: Illustration Bento UI -->
-        <div class="md:col-span-7 lg:col-span-7 relative flex items-center justify-center mt-12 md:mt-0 opacity-0 animate-fade-in-up" style="animation-delay: 0.4s;">
-            <div class="relative z-10 w-full max-w-lg aspect-square">
-                
-                <!-- Central Hub -->
-                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 glass-panel rounded-[32px] shadow-2xl flex items-center justify-center z-30 animate-float">
-                    <div class="w-20 h-20 bg-primary rounded-[20px] flex items-center justify-center text-on-primary shadow-[inset_0_2px_10px_rgba(0,0,0,0.1)]">
-                        <span class="material-symbols-outlined text-[40px]">sync_alt</span>
+                <div class="glass-card rounded-3xl p-xl group transition-all duration-500">
+                    <div
+                        class="w-20 h-20 rounded-2xl bg-gradient-to-br from-tertiary-container/30 to-tertiary/5 flex items-center justify-center mb-lg shadow-sm border border-white/50">
+                        <div class="relative w-12 h-12 flex items-center justify-center">
+                            <span
+                                class="material-symbols-outlined text-[48px] text-tertiary-container drop-shadow-sm">store</span>
+                            <span
+                                class="absolute -top-1 -right-1 material-symbols-outlined text-[24px] text-error drop-shadow-md">location_on</span>
+                        </div>
                     </div>
+                    <h3 class="font-headline-sm text-[22px] text-on-surface mb-sm">
+                        Réseau d'Agents
+                    </h3>
+                    <p class="font-body-sm text-body-md text-on-surface-variant leading-relaxed">
+                        Accédez à votre argent partout. Effectuez des dépôts et des retraits de cash dans des milliers
+                        de points relais à travers tout le Bénin.
+                    </p>
                 </div>
-
-                <!-- Orbiting Networks -->
-                <!-- MTN MoMo -->
-                <div class="absolute top-[8%] left-[8%] w-24 h-24 bg-white dark:bg-slate-800/80 backdrop-blur-md border border-white/50 rounded-3xl shadow-xl flex flex-col items-center justify-center gap-1 z-20 animate-float-delayed-1">
-                    <div class="w-10 h-10 rounded-full bg-[#FFCC00] flex items-center justify-center shadow-md">
-                        <span class="font-headline-sm text-headline-sm text-black font-bold">M</span>
+                <div class="glass-card rounded-3xl p-xl group transition-all duration-500">
+                    <div
+                        class="w-20 h-20 rounded-2xl bg-gradient-to-br from-secondary-container/50 to-secondary/10 flex items-center justify-center mb-lg shadow-sm border border-white/50">
+                        <span
+                            class="material-symbols-outlined text-[48px] text-secondary drop-shadow-sm">receipt_long</span>
                     </div>
-                    <span class="font-label-md text-[10px] text-on-surface font-semibold">MTN MoMo</span>
+                    <h3 class="font-headline-sm text-[22px] text-on-surface mb-sm">
+                        Paiement Facile
+                    </h3>
+                    <p class="font-body-sm text-body-md text-on-surface-variant leading-relaxed">
+                        Réglez vos factures SBEE, renouvelez votre abonnement Canal+ et achetez du crédit GSM en
+                        quelques clics, sans frais cachés.
+                    </p>
                 </div>
-
-                <!-- Moov -->
-                <div class="absolute top-[18%] right-[8%] w-24 h-24 bg-white dark:bg-slate-800/80 backdrop-blur-md border border-white/50 rounded-3xl shadow-xl flex flex-col items-center justify-center gap-1 z-20 animate-float-delayed-2">
-                    <div class="w-10 h-10 rounded-full bg-[#0055A5] flex items-center justify-center shadow-md">
-                        <span class="font-headline-sm text-headline-sm text-white font-bold">m</span>
-                    </div>
-                    <span class="font-label-md text-[10px] text-on-surface font-semibold">Moov Money</span>
-                </div>
-
-                <!-- Celtiis -->
-                <div class="absolute bottom-[12%] left-[12%] w-24 h-24 bg-white dark:bg-slate-800/80 backdrop-blur-md border border-white/50 rounded-3xl shadow-xl flex flex-col items-center justify-center gap-1 z-20 animate-float-delayed-3">
-                    <div class="w-10 h-10 rounded-full bg-[#00A859] flex items-center justify-center shadow-md">
-                        <span class="font-headline-sm text-headline-sm text-white font-bold">C</span>
-                    </div>
-                    <span class="font-label-md text-[10px] text-on-surface font-semibold">Celtiis Cash</span>
-                </div>
-
-                <!-- Bank -->
-                <div class="absolute bottom-[20%] right-[10%] w-28 h-28 bg-white dark:bg-slate-800/80 backdrop-blur-md border border-white/50 rounded-3xl shadow-xl flex flex-col items-center justify-center gap-2 z-20 animate-float p-3 text-center">
-                    <div class="w-10 h-10 rounded-full bg-surface-container-high border border-surface-container-highest flex items-center justify-center text-primary">
-                        <span class="material-symbols-outlined text-[20px]">account_balance</span>
-                    </div>
-                    <span class="font-label-md text-[10px] text-on-surface font-semibold leading-tight">Banques Locales</span>
-                </div>
-
-                <!-- SVG Lines -->
-                <svg class="absolute inset-0 w-full h-full z-10 pointer-events-none" preserveAspectRatio="xMidYMid meet" viewBox="0 0 400 400">
-                    <defs>
-                        <linearGradient id="lineGrad1" x1="0%" x2="100%" y1="0%" y2="100%">
-                            <stop offset="0%" stop-color="#00B875" stop-opacity="0"></stop>
-                            <stop offset="50%" stop-color="#00B875" stop-opacity="0.5"></stop>
-                            <stop offset="100%" stop-color="#00B875" stop-opacity="0"></stop>
-                        </linearGradient>
-                        <linearGradient id="lineGrad2" x1="100%" x2="0%" y1="0%" y2="100%">
-                            <stop offset="0%" stop-color="#00B875" stop-opacity="0"></stop>
-                            <stop offset="50%" stop-color="#00B875" stop-opacity="0.5"></stop>
-                            <stop offset="100%" stop-color="#00B875" stop-opacity="0"></stop>
-                        </linearGradient>
-                    </defs>
-                    <path class="animate-[dash_10s_linear_infinite]" d="M 200 200 Q 150 150 90 90" fill="none" stroke="url(#lineGrad1)" stroke-dasharray="6,6" stroke-width="2"></path>
-                    <path class="animate-[dash_10s_linear_infinite]" d="M 200 200 Q 250 150 320 120" fill="none" stroke="url(#lineGrad2)" stroke-dasharray="6,6" stroke-width="2"></path>
-                    <path class="animate-[dash_10s_linear_infinite_reverse]" d="M 200 200 Q 150 250 120 320" fill="none" stroke="url(#lineGrad2)" stroke-dasharray="6,6" stroke-width="2"></path>
-                    <path class="animate-[dash_10s_linear_infinite_reverse]" d="M 200 200 Q 250 250 310 280" fill="none" stroke="url(#lineGrad1)" stroke-dasharray="6,6" stroke-width="2"></path>
-                </svg>
             </div>
         </div>
+    </section>
 
-    </div>
-</main>
+    <!-- Security Section -->
+    <section class="py-[120px] bg-on-surface text-surface relative overflow-hidden" id="securite">
+        <div
+            class="absolute top-0 right-0 w-[600px] h-[600px] bg-primary/10 rounded-full blur-[100px] pointer-events-none">
+        </div>
+        <div
+            class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-primary-container/10 rounded-full blur-[80px] pointer-events-none">
+        </div>
+        <div class="max-w-7xl mx-auto px-container-margin relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-3xl items-center">
+                <div class="order-2 lg:order-1">
+                    <div class="grid grid-cols-2 gap-md relative">
+                        <div class="absolute -inset-4 border border-surface/5 rounded-3xl -z-10"></div>
+                        <div
+                            class="bg-inverse-surface/80 backdrop-blur-md p-lg rounded-3xl border border-surface/10 hover:border-primary-fixed/30 transition-colors duration-300">
+                            <span
+                                class="material-symbols-outlined text-[36px] text-primary-fixed mb-md opacity-90">shield_locked</span>
+                            <h4 class="font-headline-sm text-surface mb-2">Protection Avancée</h4>
+                            <p class="font-body-sm text-[13px] leading-relaxed text-surface-variant opacity-70">Données
+                                chiffrées aux standards de l'industrie.</p>
+                        </div>
+                        <div
+                            class="bg-inverse-surface/80 backdrop-blur-md p-lg rounded-3xl border border-surface/10 hover:border-primary-fixed/30 transition-colors duration-300 mt-lg">
+                            <span
+                                class="material-symbols-outlined text-[36px] text-primary-fixed mb-md opacity-90">lock</span>
+                            <h4 class="font-headline-sm text-surface mb-2">Transactions Sûres</h4>
+                            <p class="font-body-sm text-[13px] leading-relaxed text-surface-variant opacity-70">
+                                Conformité stricte PCI DSS pour chaque paiement.</p>
+                        </div>
+                        <div
+                            class="bg-inverse-surface/80 backdrop-blur-md p-lg rounded-3xl border border-surface/10 hover:border-error/30 transition-colors duration-300 col-span-2 flex items-center gap-lg">
+                            <div
+                                class="w-16 h-16 rounded-2xl bg-error-container/10 border border-error/20 flex items-center justify-center shrink-0">
+                                <span
+                                    class="material-symbols-outlined text-[32px] text-error-container">phonelink_erase</span>
+                            </div>
+                            <div>
+                                <h4 class="font-headline-sm text-surface mb-2">Blocage Instantané</h4>
+                                <p class="font-body-sm text-[14px] leading-relaxed text-surface-variant opacity-70">
+                                    Composez le *955*131# pour bloquer votre compte en cas de perte du téléphone.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="order-1 lg:order-2 space-y-lg">
+                    <div>
+                        <span
+                            class="font-label-md text-primary-fixed tracking-widest uppercase text-[12px] mb-xs block">Fiabilité
+                            Bancaire</span>
+                        <h2 class="font-display-lg text-[48px] leading-[56px] text-surface mb-md tracking-tight">
+                            Sécurité Totale</h2>
+                    </div>
+                    <p class="font-body-lg text-body-lg text-surface-variant opacity-80 leading-relaxed">
+                        Votre sécurité et votre vie privée sont notre priorité absolue. BeninPay déploie des
+                        technologies de pointe pour garantir que votre argent et vos données sont toujours protégés
+                        contre les menaces.
+                    </p>
+                    <ul class="space-y-md pt-md">
+                        <li class="flex items-center gap-md font-body-md text-surface-variant group">
+                            <div
+                                class="w-10 h-10 rounded-full bg-primary-fixed/10 flex items-center justify-center group-hover:bg-primary-fixed/20 transition-colors">
+                                <span class="material-symbols-outlined text-primary-fixed text-[24px]">check</span>
+                            </div>
+                            Scans de sécurité quotidiens
+                        </li>
+                        <li class="flex items-center gap-md font-body-md text-surface-variant group">
+                            <div
+                                class="w-10 h-10 rounded-full bg-primary-fixed/10 flex items-center justify-center group-hover:bg-primary-fixed/20 transition-colors">
+                                <span class="material-symbols-outlined text-primary-fixed text-[24px]">check</span>
+                            </div>
+                            Authentification biométrique
+                        </li>
+                        <li class="flex items-center gap-md font-body-md text-surface-variant group">
+                            <div
+                                class="w-10 h-10 rounded-full bg-primary-fixed/10 flex items-center justify-center group-hover:bg-primary-fixed/20 transition-colors">
+                                <span class="material-symbols-outlined text-primary-fixed text-[24px]">check</span>
+                            </div>
+                            Alertes instantanées par SMS
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<style>
-        @keyframes dash {
-            to { stroke-dashoffset: -100; }
-        }
-    </style>
-
-<script>
-  function applyTheme() {
-    const isDark = localStorage.getItem('theme') === 'dark';
-    const html = document.documentElement;
-    const body = document.body;
-    const icon = document.getElementById('themeToggleIcon');
-
-    if (isDark) {
-      html.classList.add('dark');
-      body.style.backgroundColor = '#0f172a';
-      body.style.color = '#f8fafc';
-      if (icon) icon.textContent = 'light_mode';
-    } else {
-      html.classList.remove('dark');
-      body.style.backgroundColor = '#f8fafc';
-      body.style.color = '#0f172a';
-      if (icon) icon.textContent = 'dark_mode';
-    }
-  }
-
-  function toggleTheme() {
-    const isDark = localStorage.getItem('theme') === 'dark';
-    localStorage.setItem('theme', isDark ? 'light' : 'dark');
-    applyTheme();
-  }
-
-  document.addEventListener('DOMContentLoaded', applyTheme);
-  applyTheme();
-</script>
+    <!-- App Download Section -->
+    <section class="py-[120px] mesh-gradient-1 relative overflow-hidden" id="aide">
+        <div class="max-w-6xl mx-auto px-container-margin relative z-10">
+            <div
+                class="bg-gradient-to-br from-primary to-[#005231] rounded-[40px] p-2xl md:p-[80px] relative overflow-hidden shadow-[0_30px_60px_rgba(0,109,67,0.2)]">
+                <div class="absolute -top-32 -right-32 w-96 h-96 bg-white/10 rounded-full blur-3xl"></div>
+                <div class="absolute -bottom-32 -left-32 w-96 h-96 bg-black/10 rounded-full blur-3xl"></div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-2xl items-center relative z-20">
+                    <div class="text-white text-center md:text-left space-y-lg">
+                        <h2 class="font-display-lg text-[40px] leading-[48px] tracking-tight">BeninPay dans votre poche
+                        </h2>
+                        <p class="font-body-lg text-body-lg text-white/80 leading-relaxed max-w-md mx-auto md:mx-0">
+                            Gérez toutes vos finances depuis une seule application. Téléchargez BeninPay aujourd'hui et
+                            prenez le contrôle.
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-md justify-center md:justify-start pt-md">
+                            <div
+                                class="bg-black/90 backdrop-blur-sm text-white px-lg py-sm rounded-2xl flex items-center justify-center gap-sm border border-white/10 select-none cursor-default">
+                                <span class="material-symbols-outlined text-[32px]">file_download</span>
+                                <div class="text-left">
+                                    <div class="text-[11px] uppercase tracking-wider opacity-70">Télécharger dans l'
+                                    </div>
+                                    <div class="font-headline-sm text-[18px] leading-tight">App Store</div>
+                                </div>
+                            </div>
+                            <div
+                                class="bg-black/90 backdrop-blur-sm text-white px-lg py-sm rounded-2xl flex items-center justify-center gap-sm border border-white/10 select-none cursor-default">
+                                <span class="material-symbols-outlined text-[32px]">play_store</span>
+                                <div class="text-left">
+                                    <div class="text-[11px] uppercase tracking-wider opacity-70">Disponible sur</div>
+                                    <div class="font-headline-sm text-[18px] leading-tight">Google Play</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex justify-center md:justify-end">
+                        <div
+                            class="bg-white p-lg rounded-3xl shadow-2xl text-center space-y-sm max-w-[220px] select-none cursor-default pointer-events-none">
+                            <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=https://beninpay.bj"
+                                alt="Code QR BeninPay" class="w-full h-auto rounded-xl">
+                            <p class="font-label-md text-[12px] text-on-surface-variant font-medium">Scannez pour
+                                télécharger</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 </body>
+
 </html>
-
-
-
-
