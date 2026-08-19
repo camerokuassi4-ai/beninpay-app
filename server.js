@@ -5,9 +5,9 @@ const app = express();
 // Sert les fichiers statiques du projet
 app.use(express.static(__dirname));
 
-// Route d'accueil vers le tableau de bord
+// Redirige la racine (/) vers la page de connexion
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'tableau_de_bord', 'code.html'));
+  res.sendFile(path.join(__dirname, 'connexion', 'code.html'));
 });
 
 module.exports = app;
