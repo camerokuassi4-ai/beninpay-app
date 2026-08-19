@@ -5,8 +5,7 @@ const app = express();
 app.use(express.static(__dirname));
 
 app.get('/', (req, res) => {
-  // Remplace NOM_EXACT par le résultat du 'ls -d accueil*'
-  res.sendFile(path.join(__dirname, 'NOM_EXACT', 'code.html'));
+  res.sendFile(path.join(__dirname, 'accueil_beninpay', 'code.html'));
 });
 
 module.exports = app;
