@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Scanner &amp; Payer - Fintech App</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Sora:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-tint": "#006d43",
+                        "surface": "#f8f9ff",
+                        "on-primary-container": "#004126",
+                        "on-background": "#0b1c30",
+                        "inverse-on-surface": "#eaf1ff",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed": "#dae2fd",
+                        "tertiary-fixed": "#ffddb8",
+                        "surface-container": "#e5eeff",
+                        "on-surface": "#0b1c30",
+                        "inverse-surface": "#213145",
+                        "error": "#ba1a1a",
+                        "on-error-container": "#93000a",
+                        "surface-container-high": "#dce9ff",
+                        "surface-container-highest": "#d3e4fe",
+                        "on-tertiary-fixed-variant": "#653e00",
+                        "on-surface-variant": "#3c4a40",
+                        "surface-container-low": "#eff4ff",
+                        "on-primary-fixed": "#002111",
+                        "on-primary-fixed-variant": "#005231",
+                        "secondary-container": "#dae2fd",
+                        "surface-bright": "#f8f9ff",
+                        "inverse-primary": "#4cdf98",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary-container": "#503100",
+                        "outline-variant": "#bbcabe",
+                        "outline": "#6c7b70",
+                        "tertiary": "#855300",
+                        "on-secondary-fixed-variant": "#3f465c",
+                        "primary-fixed-dim": "#4cdf98",
+                        "on-tertiary": "#ffffff",
+                        "on-tertiary-fixed": "#2a1700",
+                        "on-secondary-container": "#5c647a",
+                        "on-error": "#ffffff",
+                        "on-secondary-fixed": "#131b2e",
+                        "secondary": "#565e74",
+                        "tertiary-fixed-dim": "#ffb95f",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-container": "#00b875",
+                        "primary": "#006d43",
+                        "secondary-fixed-dim": "#bec6e0",
+                        "surface-dim": "#cbdbf5",
+                        "surface-variant": "#d3e4fe",
+                        "primary-fixed": "#6dfcb2",
+                        "background": "#f8f9ff",
+                        "error-container": "#ffdad6",
+                        "tertiary-container": "#e08f00"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "md": "16px",
+                        "xl": "32px",
+                        "container-margin": "20px",
+                        "lg": "24px",
+                        "gutter": "16px",
+                        "base": "4px",
+                        "sm": "12px",
+                        "xs": "8px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "label-md": ["Inter"],
+                        "headline-md": ["Sora"],
+                        "headline-sm": ["Sora"],
+                        "body-sm": ["Inter"],
+                        "display-lg": ["Sora"],
+                        "price-display": ["Sora"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "display-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "price-display": ["36px", { "lineHeight": "44px", "letterSpacing": "-1px", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: #f8f9ff;
+            color: #0b1c30;
+            -webkit-tap-highlight-color: transparent;
+        }
+        /* Mobile-first constraints */
+        .app-container {
+            max-width: 428px;
+            margin: 0 auto;
+            min-height: 100vh;
+            background-color: #f8f9ff;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(15, 23, 42, 0.05);
+        }
+        
+        /* Viewfinder framing */
+        .viewfinder-frame {
+            position: relative;
+            width: 280px;
+            height: 280px;
+            margin: 0 auto;
+        }
+        .viewfinder-frame::before, .viewfinder-frame::after,
+        .viewfinder-corner-bl, .viewfinder-corner-br {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            border-color: #00b875;
+            border-style: solid;
+            border-width: 0;
+            border-radius: 8px;
+        }
+        .viewfinder-frame::before {
+            top: 0; left: 0;
+            border-top-width: 4px; border-left-width: 4px;
+        }
+        .viewfinder-frame::after {
+            top: 0; right: 0;
+            border-top-width: 4px; border-right-width: 4px;
+        }
+        .viewfinder-corner-bl {
+            bottom: 0; left: 0;
+            border-bottom-width: 4px; border-left-width: 4px;
+        }
+        .viewfinder-corner-br {
+            bottom: 0; right: 0;
+            border-bottom-width: 4px; border-right-width: 4px;
+        }
+        
+        /* Scanning line animation */
+        .scan-line {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: #00b875;
+            box-shadow: 0 0 10px #00b875;
+            animation: scan 2.5s infinite linear;
+        }
+        @keyframes scan {
+            0% { top: 0; opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { top: 100%; opacity: 0; }
+        }
+
+        /* Ambient background for camera area */
+        .camera-ambient {
+            background: linear-gradient(135deg, rgba(0, 109, 67, 0.05) 0%, rgba(0, 33, 17, 0.1) 100%);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="dark:bg-slate-900 dark:text-slate-100 transition-colors duration-200 font-body-md text-on-surface antialiased bg-surface">
+<div class="app-container flex flex-col h-screen relative">
+<!-- TopAppBar -->
+<header class="flex justify-between items-center px-container-margin py-md w-full bg-background docked full-width top-0 z-40">
+<button class="text-on-surface-variant hover:bg-surface-container-low rounded-full p-2 transition-all w-10 h-10 flex items-center justify-center">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">arrow_back</span>
+</button>
+<h1 class="font-headline-sm text-headline-sm text-primary font-bold">Scanner &amp; Payer</h1>
+<button class="text-on-surface-variant hover:bg-surface-container-low rounded-full p-2 transition-all w-10 h-10 flex items-center justify-center">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">help_outline</span>
+</button>
+</header>
+<!-- Tabs -->
+<div class="px-container-margin py-sm bg-background z-30 relative">
+<div class="flex bg-surface-container-low rounded-lg p-1">
+<button class="flex-1 py-xs rounded-md bg-white dark:bg-slate-800 shadow-sm font-label-md text-label-md text-primary font-bold text-center transition-all" id="tab-scanner">
+                Scanner
+            </button>
+<button class="flex-1 py-xs rounded-md font-label-md text-label-md text-on-surface-variant opacity-70 text-center transition-all hover:bg-white dark:bg-slate-800/50" id="tab-myqr">
+                Mon QR
+            </button>
+</div>
+</div>
+<!-- Main Content Canvas - Scanner (Active) -->
+<main class="flex-1 relative flex flex-col items-center justify-center camera-ambient overflow-hidden" id="scanner-view">
+<!-- Mock camera background -->
+<div class="absolute inset-0 bg-cover bg-center opacity-40 mix-blend-multiply" data-alt="A blurred, slightly desaturated background resembling a coffee shop counter or market stall, seen through a mobile phone camera lens. The lighting is soft and natural, typical of a modern retail environment during the day. The color palette is muted with earthy tones and soft greys, ensuring the foreground UI elements remain highly legible." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDkwXCOrnrZ9ZNn6GEsxFPF5qheU8ZVTKHm_98s_lHBLxhrkNEo_QnFh0i7m3zkG0T0IscFM0Fe3M2yrnU1ItX78PSFA3M43w8wM3KPkhIf99RRlkBecrtMPf95HiQ2QpZeABQelDjgSuqlwY6UDTCfsYxJVk19cslBnxD5lCGPMfnDJlqG6GAmLp6gifcNG5OjHf4kg5tB-zTdsKqFeoBlkSqPnz2yaRu3b0V1JxEwFu2U3fHJvlatYA')"></div>
+<!-- Viewfinder -->
+<div class="viewfinder-frame z-10 mb-xl">
+<div class="viewfinder-corner-bl"></div>
+<div class="viewfinder-corner-br"></div>
+<div class="scan-line"></div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant text-center px-lg mb-xl z-10 bg-white dark:bg-slate-800/80 backdrop-blur-sm py-2 rounded-full shadow-sm">
+            Alignez le QR code dans le cadre pour scanner
+        </p>
+<!-- Scanner Controls -->
+<div class="flex gap-lg z-10 absolute bottom-[100px]">
+<button class="w-14 h-14 rounded-full bg-white dark:bg-slate-800 shadow-lg flex items-center justify-center text-on-surface hover:bg-surface-container-low transition-transform active:scale-95">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">flash_on</span>
+</button>
+<button class="w-14 h-14 rounded-full bg-white dark:bg-slate-800 shadow-lg flex items-center justify-center text-on-surface hover:bg-surface-container-low transition-transform active:scale-95">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">image</span>
+</button>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 bg-on-background shadow-[0_-4px_12px_rgba(15,23,42,0.08)] app-container">
+<div class="flex justify-around items-center px-container-margin pb-safe h-[64px]">
+<!-- Accueil -->
+<a class="flex flex-col items-center justify-center text-on-primary-container opacity-70 hover:bg-on-primary-fixed-variant transition-colors scale-95 active:scale-90 p-2 rounded-lg min-w-[64px]" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 0;">home</span>
+<span class="font-label-md text-label-md">Accueil</span>
+</a>
+<!-- Transactions -->
+<a class="flex flex-col items-center justify-center text-primary-fixed font-bold bg-on-primary-fixed-variant/20 transition-colors scale-95 active:scale-90 p-2 rounded-lg min-w-[64px]" href="#">
+<span class="material-symbols-outlined mb-1 text-primary-fixed" style="font-variation-settings: 'FILL' 1;">account_balance_wallet</span>
+<span class="font-label-md text-label-md">Transactions</span>
+</a>
+<!-- Épargne -->
+<a class="flex flex-col items-center justify-center text-on-primary-container opacity-70 hover:bg-on-primary-fixed-variant transition-colors scale-95 active:scale-90 p-2 rounded-lg min-w-[64px]" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 0;">savings</span>
+<span class="font-label-md text-label-md">Épargne</span>
+</a>
+<!-- Profil -->
+<a class="flex flex-col items-center justify-center text-on-primary-container opacity-70 hover:bg-on-primary-fixed-variant transition-colors scale-95 active:scale-90 p-2 rounded-lg min-w-[64px]" href="#">
+<span class="material-symbols-outlined mb-1" style="font-variation-settings: 'FILL' 0;">person</span>
+<span class="font-label-md text-label-md">Profil</span>
+</a>
+</div>
+</nav>
+<!-- Spacer for bottom nav -->
+<div class="h-[64px] w-full shrink-0"></div>
+</div>
+
+<script>
+  function applyTheme() {
+    const isDark = localStorage.getItem('theme') === 'dark';
+    const html = document.documentElement;
+    const body = document.body;
+    const icon = document.getElementById('themeToggleIcon');
+
+    if (isDark) {
+      html.classList.add('dark');
+      body.style.backgroundColor = '#0f172a';
+      body.style.color = '#f8fafc';
+      if (icon) icon.textContent = 'light_mode';
+    } else {
+      html.classList.remove('dark');
+      body.style.backgroundColor = '#f8fafc';
+      body.style.color = '#0f172a';
+      if (icon) icon.textContent = 'dark_mode';
+    }
+  }
+
+  function toggleTheme() {
+    const isDark = localStorage.getItem('theme') === 'dark';
+    localStorage.setItem('theme', isDark ? 'light' : 'dark');
+    applyTheme();
+  }
+
+  document.addEventListener('DOMContentLoaded', applyTheme);
+  applyTheme();
+</script>
+</body></html>
+
+
+

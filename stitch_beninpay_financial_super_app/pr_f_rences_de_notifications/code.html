@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+
+<html lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-width=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>BeninPay - Réglages Notifications</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Sora:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline": "#6c7b70",
+                        "on-background": "#0b1c30",
+                        "on-tertiary": "#ffffff",
+                        "surface-variant": "#d3e4fe",
+                        "tertiary-fixed": "#ffddb8",
+                        "tertiary": "#855300",
+                        "on-secondary-fixed": "#131b2e",
+                        "primary": "#006d43",
+                        "primary-container": "#00b875",
+                        "surface-bright": "#f8f9ff",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-container": "#5c647a",
+                        "on-surface": "#0b1c30",
+                        "secondary-fixed-dim": "#bec6e0",
+                        "on-primary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "surface-tint": "#006d43",
+                        "surface-container": "#e5eeff",
+                        "surface": "#f8f9ff",
+                        "on-tertiary-container": "#503100",
+                        "secondary": "#565e74",
+                        "inverse-surface": "#213145",
+                        "surface-dim": "#cbdbf5",
+                        "on-error-container": "#93000a",
+                        "secondary-fixed": "#dae2fd",
+                        "on-secondary-fixed-variant": "#3f465c",
+                        "on-primary-fixed": "#002111",
+                        "inverse-primary": "#4cdf98",
+                        "on-tertiary-fixed-variant": "#653e00",
+                        "tertiary-container": "#e08f00",
+                        "surface-container-high": "#dce9ff",
+                        "surface-container-low": "#eff4ff",
+                        "on-primary-container": "#004126",
+                        "surface-container-highest": "#d3e4fe",
+                        "on-surface-variant": "#3c4a40",
+                        "on-tertiary-fixed": "#2a1700",
+                        "on-error": "#ffffff",
+                        "primary-fixed-dim": "#4cdf98",
+                        "secondary-container": "#dae2fd",
+                        "error": "#ba1a1a",
+                        "inverse-on-surface": "#eaf1ff",
+                        "tertiary-fixed-dim": "#ffb95f",
+                        "on-primary-fixed-variant": "#005231",
+                        "background": "#f8f9ff",
+                        "outline-variant": "#bbcabe",
+                        "primary-fixed": "#6dfcb2"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "md": "16px",
+                        "xs": "8px",
+                        "sm": "12px",
+                        "base": "4px",
+                        "lg": "24px",
+                        "container-margin": "20px",
+                        "gutter": "16px",
+                        "xl": "32px"
+                    },
+                    "fontFamily": {
+                        "label-md": ["Inter"],
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "headline-sm": ["Sora"],
+                        "body-sm": ["Inter"],
+                        "headline-md": ["Sora"],
+                        "display-lg": ["Sora"],
+                        "price-display": ["Sora"]
+                    },
+                    "fontSize": {
+                        "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "display-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "price-display": ["36px", { "lineHeight": "44px", "letterSpacing": "-1px", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .toggle-checkbox:checked {
+            right: 0;
+            border-color: #00B875;
+        }
+        .toggle-checkbox:checked + .toggle-label {
+            background-color: #00B875;
+        }
+        .toggle-checkbox:disabled + .toggle-label {
+            background-color: #bbcabe;
+            cursor: not-allowed;
+            opacity: 0.5;
+        }
+    </style>
+</head>
+<body class="dark:bg-slate-900 dark:text-slate-100 transition-colors duration-200 bg-background text-on-background font-body-md min-h-screen flex flex-col antialiased">
+<!-- TopAppBar -->
+<header class="w-full sticky top-0 z-40 shadow-sm bg-surface">
+<div class="flex items-center justify-between px-container-margin h-16 w-full max-w-screen-xl mx-auto">
+<button class="scale-95 active:opacity-80 transition-all text-primary hover:bg-surface-container-high p-2 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<h1 class="font-headline-md text-headline-md font-bold text-primary">Réglages Notifications</h1>
+<div class="w-10"></div> <!-- Spacer for centering -->
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-grow px-container-margin py-lg max-w-screen-md mx-auto w-full flex flex-col gap-lg">
+<!-- Canaux de diffusion Section -->
+<section class="flex flex-col gap-sm">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Canaux de diffusion</h2>
+<div class="bg-surface-container-lowest rounded-xl p-md shadow-sm border border-surface-container-highest flex flex-col gap-md">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-sm">
+<div class="bg-surface-container p-xs rounded-full flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="smartphone">smartphone</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface">Push Mobile</span>
+</div>
+<div class="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in">
+<input checked="" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white dark:bg-slate-800 border-4 appearance-none cursor-pointer transition-all duration-300 z-10 top-0 left-0 checked:translate-x-full checked:border-primary-container" id="push-mobile" name="toggle" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-6 rounded-full bg-outline-variant cursor-pointer transition-colors duration-300" for="push-mobile"></label>
+</div>
+</div>
+<hr class="border-surface-container-highest border-t"/>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-sm">
+<div class="bg-surface-container p-xs rounded-full flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="sms">sms</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface">SMS</span>
+</div>
+<div class="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in">
+<input checked="" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white dark:bg-slate-800 border-4 appearance-none cursor-pointer transition-all duration-300 z-10 top-0 left-0 checked:translate-x-full checked:border-primary-container" id="sms-mobile" name="toggle" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-6 rounded-full bg-outline-variant cursor-pointer transition-colors duration-300" for="sms-mobile"></label>
+</div>
+</div>
+<hr class="border-surface-container-highest border-t"/>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-sm">
+<div class="bg-surface-container p-xs rounded-full flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" data-icon="email">email</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface">Email</span>
+</div>
+<div class="relative inline-block w-10 mr-2 align-middle select-none transition duration-200 ease-in">
+<input class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white dark:bg-slate-800 border-4 appearance-none cursor-pointer transition-all duration-300 z-10 top-0 left-0 checked:translate-x-full checked:border-primary-container" id="email-mobile" name="toggle" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-6 rounded-full bg-outline-variant cursor-pointer transition-colors duration-300" for="email-mobile"></label>
+</div>
+</div>
+</div>
+</section>
+<!-- Préférences granulaires Section -->
+<section class="flex flex-col gap-sm">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Préférences granulaires</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<!-- Transactions Card -->
+<div class="bg-surface-container-lowest rounded-xl p-md shadow-sm border border-surface-container-highest flex flex-col gap-sm">
+<div class="flex items-center gap-sm mb-xs">
+<span class="material-symbols-outlined text-secondary" data-icon="sync_alt">sync_alt</span>
+<h3 class="font-headline-sm text-body-lg text-on-surface">Transactions</h3>
+</div>
+<div class="flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Push</span>
+<div class="relative inline-block w-10 align-middle select-none">
+<input checked="" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white dark:bg-slate-800 border-4 appearance-none cursor-pointer transition-all duration-300 z-10 top-0 left-0 checked:translate-x-full checked:border-primary-container" id="trans-push" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-6 rounded-full bg-outline-variant cursor-pointer transition-colors duration-300" for="trans-push"></label>
+</div>
+</div>
+<div class="flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-on-surface-variant">SMS</span>
+<div class="relative inline-block w-10 align-middle select-none">
+<input checked="" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white dark:bg-slate-800 border-4 appearance-none cursor-pointer transition-all duration-300 z-10 top-0 left-0 checked:translate-x-full checked:border-primary-container" id="trans-sms" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-6 rounded-full bg-outline-variant cursor-pointer transition-colors duration-300" for="trans-sms"></label>
+</div>
+</div>
+<div class="flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Email</span>
+<div class="relative inline-block w-10 align-middle select-none">
+<input class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white dark:bg-slate-800 border-4 appearance-none cursor-pointer transition-all duration-300 z-10 top-0 left-0 checked:translate-x-full checked:border-primary-container" id="trans-email" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-6 rounded-full bg-outline-variant cursor-pointer transition-colors duration-300" for="trans-email"></label>
+</div>
+</div>
+</div>
+<!-- Sécurité & Compte Card -->
+<div class="bg-surface-container-lowest rounded-xl p-md shadow-sm border border-surface-container-highest flex flex-col gap-sm">
+<div class="flex items-center gap-sm mb-xs">
+<span class="material-symbols-outlined text-secondary" data-icon="security">security</span>
+<h3 class="font-headline-sm text-body-lg text-on-surface">Sécurité &amp; Compte</h3>
+</div>
+<div class="flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Push (Obligatoire)</span>
+<div class="relative inline-block w-10 align-middle select-none opacity-50">
+<input checked="" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white dark:bg-slate-800 border-4 border-primary-container appearance-none cursor-not-allowed z-10 top-0 left-0 translate-x-full" disabled="" id="sec-push" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-6 rounded-full bg-primary-container cursor-not-allowed" for="sec-push"></label>
+</div>
+</div>
+<div class="flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-on-surface-variant">SMS</span>
+<div class="relative inline-block w-10 align-middle select-none">
+<input checked="" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white dark:bg-slate-800 border-4 appearance-none cursor-pointer transition-all duration-300 z-10 top-0 left-0 checked:translate-x-full checked:border-primary-container" id="sec-sms" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-6 rounded-full bg-outline-variant cursor-pointer transition-colors duration-300" for="sec-sms"></label>
+</div>
+</div>
+<div class="flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Email</span>
+<div class="relative inline-block w-10 align-middle select-none">
+<input checked="" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white dark:bg-slate-800 border-4 appearance-none cursor-pointer transition-all duration-300 z-10 top-0 left-0 checked:translate-x-full checked:border-primary-container" id="sec-email" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-6 rounded-full bg-outline-variant cursor-pointer transition-colors duration-300" for="sec-email"></label>
+</div>
+</div>
+</div>
+<!-- Offres & Promos Card -->
+<div class="bg-surface-container-lowest rounded-xl p-md shadow-sm border border-surface-container-highest flex flex-col gap-sm md:col-span-2">
+<div class="flex items-center gap-sm mb-xs">
+<span class="material-symbols-outlined text-secondary" data-icon="campaign">campaign</span>
+<h3 class="font-headline-sm text-body-lg text-on-surface">Offres &amp; Promos</h3>
+</div>
+<div class="flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Push</span>
+<div class="relative inline-block w-10 align-middle select-none">
+<input class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white dark:bg-slate-800 border-4 appearance-none cursor-pointer transition-all duration-300 z-10 top-0 left-0 checked:translate-x-full checked:border-primary-container" id="promo-push" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-6 rounded-full bg-outline-variant cursor-pointer transition-colors duration-300" for="promo-push"></label>
+</div>
+</div>
+<div class="flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-on-surface-variant">SMS</span>
+<div class="relative inline-block w-10 align-middle select-none">
+<input class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white dark:bg-slate-800 border-4 appearance-none cursor-pointer transition-all duration-300 z-10 top-0 left-0 checked:translate-x-full checked:border-primary-container" id="promo-sms" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-6 rounded-full bg-outline-variant cursor-pointer transition-colors duration-300" for="promo-sms"></label>
+</div>
+</div>
+<div class="flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Email</span>
+<div class="relative inline-block w-10 align-middle select-none">
+<input class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white dark:bg-slate-800 border-4 appearance-none cursor-pointer transition-all duration-300 z-10 top-0 left-0 checked:translate-x-full checked:border-primary-container" id="promo-email" type="checkbox"/>
+<label class="toggle-label block overflow-hidden h-6 rounded-full bg-outline-variant cursor-pointer transition-colors duration-300" for="promo-email"></label>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Suppressed BottomNavBar as this is a Settings/Transactional sub-page -->
+
+<script>
+  function applyTheme() {
+    const isDark = localStorage.getItem('theme') === 'dark';
+    const html = document.documentElement;
+    const body = document.body;
+    const icon = document.getElementById('themeToggleIcon');
+
+    if (isDark) {
+      html.classList.add('dark');
+      body.style.backgroundColor = '#0f172a';
+      body.style.color = '#f8fafc';
+      if (icon) icon.textContent = 'light_mode';
+    } else {
+      html.classList.remove('dark');
+      body.style.backgroundColor = '#f8fafc';
+      body.style.color = '#0f172a';
+      if (icon) icon.textContent = 'dark_mode';
+    }
+  }
+
+  function toggleTheme() {
+    const isDark = localStorage.getItem('theme') === 'dark';
+    localStorage.setItem('theme', isDark ? 'light' : 'dark');
+    applyTheme();
+  }
+
+  document.addEventListener('DOMContentLoaded', applyTheme);
+  applyTheme();
+</script>
+</body></html>
+
+
+

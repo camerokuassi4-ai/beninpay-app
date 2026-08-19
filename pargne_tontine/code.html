@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+
+<html class="light" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>OPay Épargne</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Sora:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-tint": "#006d43",
+                      "surface": "#f8f9ff",
+                      "on-primary-container": "#004126",
+                      "on-background": "#0b1c30",
+                      "inverse-on-surface": "#eaf1ff",
+                      "on-primary": "#ffffff",
+                      "secondary-fixed": "#dae2fd",
+                      "tertiary-fixed": "#ffddb8",
+                      "surface-container": "#e5eeff",
+                      "on-surface": "#0b1c30",
+                      "inverse-surface": "#213145",
+                      "error": "#ba1a1a",
+                      "on-error-container": "#93000a",
+                      "surface-container-high": "#dce9ff",
+                      "surface-container-highest": "#d3e4fe",
+                      "on-tertiary-fixed-variant": "#653e00",
+                      "on-surface-variant": "#3c4a40",
+                      "surface-container-low": "#eff4ff",
+                      "on-primary-fixed": "#002111",
+                      "on-primary-fixed-variant": "#005231",
+                      "secondary-container": "#dae2fd",
+                      "surface-bright": "#f8f9ff",
+                      "inverse-primary": "#4cdf98",
+                      "on-secondary": "#ffffff",
+                      "on-tertiary-container": "#503100",
+                      "outline-variant": "#bbcabe",
+                      "outline": "#6c7b70",
+                      "tertiary": "#855300",
+                      "on-secondary-fixed-variant": "#3f465c",
+                      "primary-fixed-dim": "#4cdf98",
+                      "on-tertiary": "#ffffff",
+                      "on-tertiary-fixed": "#2a1700",
+                      "on-secondary-container": "#5c647a",
+                      "on-error": "#ffffff",
+                      "on-secondary-fixed": "#131b2e",
+                      "secondary": "#565e74",
+                      "tertiary-fixed-dim": "#ffb95f",
+                      "surface-container-lowest": "#ffffff",
+                      "primary-container": "#00b875",
+                      "primary": "#006d43",
+                      "secondary-fixed-dim": "#bec6e0",
+                      "surface-dim": "#cbdbf5",
+                      "surface-variant": "#d3e4fe",
+                      "primary-fixed": "#6dfcb2",
+                      "background": "#f8f9ff",
+                      "error-container": "#ffdad6",
+                      "tertiary-container": "#e08f00"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "md": "16px",
+                      "xl": "32px",
+                      "container-margin": "20px",
+                      "lg": "24px",
+                      "gutter": "16px",
+                      "base": "4px",
+                      "sm": "12px",
+                      "xs": "8px"
+              },
+              "fontFamily": {
+                      "body-lg": ["Inter"],
+                      "body-md": ["Inter"],
+                      "label-md": ["Inter"],
+                      "headline-md": ["Sora"],
+                      "headline-sm": ["Sora"],
+                      "body-sm": ["Inter"],
+                      "display-lg": ["Sora"],
+                      "price-display": ["Sora"]
+              },
+              "fontSize": {
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                      "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                      "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                      "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                      "display-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "price-display": ["36px", {"lineHeight": "44px", "letterSpacing": "-1px", "fontWeight": "700"}]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.fill {
+            font-variation-settings: 'FILL' 1;
+        }
+        body {
+            -webkit-tap-highlight-color: transparent;
+        }
+        .safe-pb {
+            padding-bottom: calc(64px + env(safe-area-inset-bottom, 20px));
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="dark:bg-slate-900 dark:text-slate-100 transition-colors duration-200 bg-background text-on-background min-h-screen relative font-body-md">
+<!-- Top App Bar -->
+<header class="flex justify-between items-center px-container-margin py-md w-full bg-background docked full-width top-0 sticky z-40">
+<div class="flex items-center gap-sm">
+<div class="w-10 h-10 rounded-full bg-surface-container-high overflow-hidden hover:bg-surface-container-low transition-all">
+<img alt="User profile photo" class="w-full h-full object-cover" data-alt="A close up portrait of a young West African professional woman smiling gently in bright sunlight. Clean modern corporate aesthetic. Emerald green and slate tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQ83XZ-Cf5mRUp_bQg_pZpXHokBxAo4HvRg7INCu1xkwSUWjjH6R_kTyNE9sIj6uHf4f5_ueMaDXDab1GUpDQpO7XlnTK55_Nq2MFEjWQZREDyDLHwkj5XLAHJmnfVfmCsZ8ZZSr9neqm_gG60qr3Dn35nMfIHvmUPYTe3ewWjTCrv4LNWB_ic-Qzbxx2KZ9g3nNOIujj_0F7X4kx1hW4YZ4TkjmhUBwWcCqkCGUTE7fEoU_JOL8Vxgw"/>
+</div>
+<h1 class="font-headline-md text-headline-md font-bold text-primary">Bonjour, User</h1>
+</div>
+<button class="w-10 h-10 flex items-center justify-center text-on-surface-variant hover:bg-surface-container-low rounded-full transition-all active:scale-98">
+<button onclick="toggleTheme()" class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors text-slate-700 dark:text-slate-200" title="Changer le thème">
+  <span id="themeToggleIcon" class="material-symbols-outlined">dark_mode</span>
+</button>
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+</header>
+<!-- Main Content -->
+<main class="px-container-margin pt-sm safe-pb flex flex-col gap-xl max-w-[600px] mx-auto w-full md:px-xl">
+<!-- Hero: Balance Card -->
+<section class="bg-primary text-on-primary rounded-xl p-lg relative overflow-hidden shadow-[0_8px_24px_rgba(0,109,67,0.2)]">
+<div class="absolute -right-12 -top-12 w-48 h-48 bg-white dark:bg-slate-800/10 rounded-full blur-2xl"></div>
+<div class="absolute -left-8 -bottom-8 w-32 h-32 bg-primary-fixed/20 rounded-full blur-xl"></div>
+<div class="relative z-10 flex flex-col gap-base">
+<div class="flex justify-between items-center opacity-90">
+<span class="font-body-sm text-body-sm text-surface-container">Solde Épargne Total</span>
+<button class="w-8 h-8 flex items-center justify-center rounded-full bg-white dark:bg-slate-800/10 hover:bg-white dark:bg-slate-800/20 transition-colors">
+<span class="material-symbols-outlined text-[20px]" data-icon="visibility">visibility</span>
+</button>
+</div>
+<div class="font-price-display text-price-display text-on-primary tracking-tight">
+                    450,000 <span class="text-surface-container font-headline-sm text-headline-sm">FCFA</span>
+</div>
+<div class="mt-sm bg-on-primary-fixed-variant/50 backdrop-blur-sm rounded-lg p-sm border border-white/10 flex items-center gap-sm">
+<div class="w-8 h-8 rounded-full bg-primary-fixed text-primary-fixed-dim bg-opacity-20 flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px] text-primary-fixed" data-icon="trending_up">trending_up</span>
+</div>
+<div>
+<div class="font-body-sm text-body-sm text-surface-container">Intérêts Cumulés</div>
+<div class="font-headline-sm text-headline-sm text-primary-fixed">+25 FCFA <span class="text-[12px] font-normal text-surface-container">Aujourd'hui</span></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Products Listing (Bento Grid Style) -->
+<section class="flex flex-col gap-md">
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Produits d'Épargne</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<!-- Flexi-Save -->
+<div class="bg-surface-container-lowest rounded-xl p-md border border-surface-container shadow-[0_4px_12px_rgba(15,23,42,0.04)] relative overflow-hidden group hover:shadow-[0_8px_24px_rgba(15,23,42,0.08)] transition-all">
+<div class="flex items-start justify-between mb-sm relative z-10">
+<div class="w-12 h-12 rounded-lg bg-surface-container-low text-primary flex items-center justify-center">
+<span class="material-symbols-outlined fill text-[24px]" data-icon="account_balance_wallet" data-weight="fill">account_balance_wallet</span>
+</div>
+<div class="bg-surface-container text-on-surface font-label-md text-label-md px-sm py-base rounded-full">
+                            5% p.a.
+                        </div>
+</div>
+<div class="relative z-10">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Flexi-Save</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-base">Épargne flexible. Retraits libres à tout moment.</p>
+</div>
+<div class="absolute right-0 bottom-0 w-24 h-24 bg-surface-container-low rounded-tl-full -mr-8 -mb-8 transition-transform group-hover:scale-110"></div>
+</div>
+<!-- Tontine Digitale -->
+<div class="bg-surface-container-lowest rounded-xl p-md border border-surface-container shadow-[0_4px_12px_rgba(15,23,42,0.04)] relative overflow-hidden group hover:shadow-[0_8px_24px_rgba(15,23,42,0.08)] transition-all">
+<div class="flex items-start justify-between mb-sm relative z-10">
+<div class="w-12 h-12 rounded-lg bg-tertiary-fixed text-tertiary flex items-center justify-center">
+<span class="material-symbols-outlined fill text-[24px]" data-icon="lock" data-weight="fill">lock</span>
+</div>
+<div class="bg-tertiary-fixed text-on-tertiary-fixed font-label-md text-label-md px-sm py-base rounded-full">
+                            8% p.a.
+                        </div>
+</div>
+<div class="relative z-10">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Tontine Digitale</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-base">Épargne bloquée pour maximiser vos rendements.</p>
+</div>
+<div class="absolute right-0 bottom-0 w-24 h-24 bg-tertiary-fixed/30 rounded-tl-full -mr-8 -mb-8 transition-transform group-hover:scale-110"></div>
+</div>
+<!-- Coffre-fort -->
+<div class="bg-surface-container-lowest rounded-xl p-md border border-surface-container shadow-[0_4px_12px_rgba(15,23,42,0.04)] relative overflow-hidden group hover:shadow-[0_8px_24px_rgba(15,23,42,0.08)] transition-all md:col-span-2">
+<div class="flex items-center gap-md relative z-10">
+<div class="w-12 h-12 shrink-0 rounded-lg bg-secondary-fixed text-secondary flex items-center justify-center">
+<span class="material-symbols-outlined fill text-[24px]" data-icon="target" data-weight="fill">target</span>
+</div>
+<div class="flex-1">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Coffre-fort</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-base line-clamp-1">Atteignez vos objectifs d'épargne.</p>
+</div>
+<button class="w-10 h-10 shrink-0 rounded-full bg-surface-container-high text-on-surface flex items-center justify-center hover:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Action -->
+<section class="mt-sm">
+<button class="w-full h-[56px] bg-primary text-on-primary font-body-lg text-body-lg rounded-xl shadow-md hover:shadow-lg hover:bg-primary-fixed-variant hover:text-white transition-all flex items-center justify-center gap-sm">
+<span class="material-symbols-outlined" data-icon="add_circle">add_circle</span>
+                 Commencer à épargner
+             </button>
+</section>
+</main>
+<!-- Bottom Navigation Bar -->
+
+<nav class="fixed bottom-0 w-full z-50 bg-white dark:bg-slate-800 border-t border-slate-200 dark:border-slate-700 shadow-[0_-4px_12px_rgba(15,23,42,0.08)] h-[64px] flex justify-around items-center px-container-margin pb-safe">
+  <a href="../tableau_de_bord/code.html" class="flex flex-col items-center justify-center text-slate-700 dark:text-slate-200 hover:text-emerald-600 transition-colors h-full px-2 w-[72px] rounded-lg">
+    <span class="material-symbols-outlined" data-icon="home">home</span>
+    <span class="font-label-md text-[10px] mt-1">Accueil</span>
+  </a>
+  <a href="../transfert_inter_r_seaux/code.html" class="flex flex-col items-center justify-center text-slate-700 dark:text-slate-200 hover:text-emerald-600 transition-colors h-full px-2 w-[72px] rounded-lg">
+    <span class="material-symbols-outlined" data-icon="account_balance_wallet">account_balance_wallet</span>
+    <span class="font-label-md text-[10px] mt-1">Transactions</span>
+  </a>
+  <button class="flex flex-col items-center justify-center text-primary-fixed font-bold hover:bg-on-primary-fixed-variant transition-colors scale-95 active:scale-90 transition-transform h-full px-2 w-[72px] rounded-lg">
+    <span class="material-symbols-outlined" data-icon="savings" data-weight="fill" style="font-variation-settings: 'FILL' 1;">savings</span>
+    <span class="font-label-md text-[10px] mt-1">Épargne</span>
+  </button>
+  <a href="../profil_utilisateur/code.html" class="flex flex-col items-center justify-center text-slate-700 dark:text-slate-200 hover:text-emerald-600 transition-colors h-full px-2 w-[72px] rounded-lg">
+    <span class="material-symbols-outlined" data-icon="person">person</span>
+    <span class="font-label-md text-[10px] mt-1">Profil</span>
+  </a>
+</nav>
+
+<script>
+  function applyTheme() {
+    const isDark = localStorage.getItem('theme') === 'dark';
+    const html = document.documentElement;
+    const body = document.body;
+    const icon = document.getElementById('themeToggleIcon');
+
+    if (isDark) {
+      html.classList.add('dark');
+      body.style.backgroundColor = '#0f172a';
+      body.style.color = '#f8fafc';
+      if (icon) icon.textContent = 'light_mode';
+    } else {
+      html.classList.remove('dark');
+      body.style.backgroundColor = '#f8fafc';
+      body.style.color = '#0f172a';
+      if (icon) icon.textContent = 'dark_mode';
+    }
+  }
+
+  function toggleTheme() {
+    const isDark = localStorage.getItem('theme') === 'dark';
+    localStorage.setItem('theme', isDark ? 'light' : 'dark');
+    applyTheme();
+  }
+
+  document.addEventListener('DOMContentLoaded', applyTheme);
+  applyTheme();
+</script>
+</body></html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

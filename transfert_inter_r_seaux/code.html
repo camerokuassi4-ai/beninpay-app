@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+
+<html class="light" lang="fr">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Envoyer de l'argent</title>
+  <!-- Material Symbols -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect" />
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Sora:wght@600;700&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <!-- Tailwind Configuration -->
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-tint": "#006d43",
+            "surface": "#f8f9ff",
+            "on-primary-container": "#004126",
+            "on-background": "#0b1c30",
+            "inverse-on-surface": "#eaf1ff",
+            "on-primary": "#ffffff",
+            "secondary-fixed": "#dae2fd",
+            "tertiary-fixed": "#ffddb8",
+            "surface-container": "#e5eeff",
+            "on-surface": "#0b1c30",
+            "inverse-surface": "#213145",
+            "error": "#ba1a1a",
+            "on-error-container": "#93000a",
+            "surface-container-high": "#dce9ff",
+            "surface-container-highest": "#d3e4fe",
+            "on-tertiary-fixed-variant": "#653e00",
+            "on-surface-variant": "#3c4a40",
+            "surface-container-low": "#eff4ff",
+            "on-primary-fixed": "#002111",
+            "on-primary-fixed-variant": "#005231",
+            "secondary-container": "#dae2fd",
+            "surface-bright": "#f8f9ff",
+            "inverse-primary": "#4cdf98",
+            "on-secondary": "#ffffff",
+            "on-tertiary-container": "#503100",
+            "outline-variant": "#bbcabe",
+            "outline": "#6c7b70",
+            "tertiary": "#855300",
+            "on-secondary-fixed-variant": "#3f465c",
+            "primary-fixed-dim": "#4cdf98",
+            "on-tertiary": "#ffffff",
+            "on-tertiary-fixed": "#2a1700",
+            "on-secondary-container": "#5c647a",
+            "on-error": "#ffffff",
+            "on-secondary-fixed": "#131b2e",
+            "secondary": "#565e74",
+            "tertiary-fixed-dim": "#ffb95f",
+            "surface-container-lowest": "#ffffff",
+            "primary-container": "#00b875",
+            "primary": "#006d43",
+            "secondary-fixed-dim": "#bec6e0",
+            "surface-dim": "#cbdbf5",
+            "surface-variant": "#d3e4fe",
+            "primary-fixed": "#6dfcb2",
+            "background": "#f8f9ff",
+            "error-container": "#ffdad6",
+            "tertiary-container": "#e08f00"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "md": "16px",
+            "xl": "32px",
+            "container-margin": "20px",
+            "lg": "24px",
+            "gutter": "16px",
+            "base": "4px",
+            "sm": "12px",
+            "xs": "8px"
+          },
+          "fontFamily": {
+            "body-lg": ["Inter"],
+            "body-md": ["Inter"],
+            "label-md": ["Inter"],
+            "headline-md": ["Sora"],
+            "headline-sm": ["Sora"],
+            "body-sm": ["Inter"],
+            "display-lg": ["Sora"],
+            "price-display": ["Sora"]
+          },
+          "fontSize": {
+            "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+            "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+            "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+            "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+            "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "display-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "price-display": ["36px", { "lineHeight": "44px", "letterSpacing": "-1px", "fontWeight": "700" }]
+          }
+        },
+      },
+    }
+  </script>
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+
+    .material-symbols-outlined.filled {
+      font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+  </style>
+  <style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+
+<body class="dark:bg-slate-900 dark:text-slate-100 transition-colors duration-200 bg-background text-on-background font-body-md min-h-screen pb-[80px]">
+  <!-- Header (Custom based on user prompt, ignoring TopAppBar standard as it's a sub-page task) -->
+  <header
+    class="flex items-center px-container-margin py-md w-full sticky top-0 bg-background/90 backdrop-blur-md z-40">
+    <button aria-label="Retour"
+      class="p-2 rounded-full hover:bg-surface-container-low transition-all text-on-surface-variant flex items-center justify-center mr-4" onclick="window.location.href='../tableau_de_bord/code.html'" style="cursor:pointer;" >
+      <span class="material-symbols-outlined text-2xl">arrow_back</span>
+    </button>
+    <h1 class="font-headline-sm text-headline-sm text-on-background m-0">Envoyer de l'argent</h1>
+  </header>
+  <main class="px-container-margin py-md max-w-md mx-auto space-y-xl">
+    <!-- Step 1: Source Selection (Bento/Card Style) -->
+    <section class="space-y-sm animate-fade-in-up">
+      <h2 class="font-label-md text-label-md text-on-surface-variant uppercase">Source</h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-sm">
+        <!-- MTN Active -->
+        <button
+          class="relative bg-surface-container-lowest rounded-xl p-sm shadow-[0_4px_12px_rgba(15,23,42,0.04)] border-2 border-primary flex flex-col items-center justify-center gap-xs overflow-hidden group hover:shadow-[0_8px_24px_rgba(15,23,42,0.08)] transition-all">
+          <div class="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+          <div
+            class="w-10 h-10 rounded-full bg-[#FFCC00] flex items-center justify-center text-black font-bold font-headline-sm text-sm">
+            M</div>
+          <span class="font-label-md text-label-md text-primary">MTN</span>
+          <span
+            class="material-symbols-outlined filled text-primary absolute top-2 right-2 text-[16px]">check_circle</span>
+        </button>
+        <!-- Moov Inactive -->
+        <button
+          class="relative bg-surface-container-lowest rounded-xl p-sm shadow-[0_4px_12px_rgba(15,23,42,0.04)] border border-outline-variant flex flex-col items-center justify-center gap-xs overflow-hidden group hover:border-primary/50 transition-all">
+          <div
+            class="w-10 h-10 rounded-full bg-[#0066B3] flex items-center justify-center text-white font-bold font-headline-sm text-sm">
+            Mo</div>
+          <span class="font-label-md text-label-md text-on-surface-variant">Moov</span>
+        </button>
+        <!-- Celtiis Inactive -->
+        <button
+          class="relative bg-surface-container-lowest rounded-xl p-sm shadow-[0_4px_12px_rgba(15,23,42,0.04)] border border-outline-variant flex flex-col items-center justify-center gap-xs overflow-hidden group hover:border-primary/50 transition-all">
+          <div
+            class="w-10 h-10 rounded-full bg-[#E50000] flex items-center justify-center text-white font-bold font-headline-sm text-sm">
+            C</div>
+          <span class="font-label-md text-label-md text-on-surface-variant">Celtiis</span>
+        </button>
+        <!-- OPay Inactive -->
+        <button
+          class="relative bg-surface-container-lowest rounded-xl p-sm shadow-[0_4px_12px_rgba(15,23,42,0.04)] border border-outline-variant flex flex-col items-center justify-center gap-xs overflow-hidden group hover:border-primary/50 transition-all">
+          <div
+            class="w-10 h-10 rounded-full bg-[#00C399] flex items-center justify-center text-white font-bold font-headline-sm text-sm">
+            O</div>
+          <span class="font-label-md text-label-md text-on-surface-variant">OPay</span>
+        </button>
+      </div>
+    </section>
+    <!-- Step 2: Destinataire Input (Glassmorphism inspired card) -->
+    <section
+      class="bg-surface-container-lowest rounded-[24px] p-md shadow-[0_12px_32px_rgba(15,23,42,0.06)] border border-outline-variant/30 space-y-sm relative overflow-hidden">
+      <div class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-bl-full blur-2xl pointer-events-none"></div>
+      <h2 class="font-label-md text-label-md text-on-surface-variant uppercase relative z-10">Destinataire</h2>
+      <div class="relative z-10">
+        <!-- Floating Label Input Structure -->
+        <div class="relative flex items-center group">
+          <!-- Network Indicator (Auto-appears) -->
+          <div
+            class="absolute left-3 w-8 h-8 rounded-full bg-[#FFCC00] flex items-center justify-center shadow-sm z-20">
+            <span class="text-black font-bold text-[10px]">MTN</span>
+          </div>
+          <input
+            class="w-full pl-14 pr-12 py-4 bg-transparent border-b-2 border-outline-variant focus:border-primary focus:outline-none focus:ring-0 font-body-lg text-body-lg text-on-background placeholder:text-on-surface-variant/50 transition-colors bg-white dark:bg-slate-800 rounded-t-lg"
+            id="phone" name="phone" placeholder="Numéro de téléphone" type="tel" value="97 00 00 00" />
+          <button aria-label="Choisir un contact"
+            class="absolute right-3 text-on-surface-variant hover:text-primary transition-colors p-2">
+            <span class="material-symbols-outlined">contacts</span>
+          </button>
+        </div>
+        <p class="font-body-sm text-body-sm text-on-surface-variant mt-2 pl-2">Benin (+229)</p>
+      </div>
+    </section>
+    <!-- Step 3: Amount Input -->
+    <section class="bg-primary/5 rounded-[24px] p-lg border border-primary/10 space-y-sm relative">
+      <div class="flex justify-between items-center mb-xs">
+        <h2 class="font-label-md text-label-md text-on-surface-variant uppercase">Montant</h2>
+        <span
+          class="font-body-sm text-body-sm text-on-surface-variant bg-surface-container-lowest px-2 py-1 rounded-md shadow-sm border border-outline-variant/20">
+          Solde: <span class="font-semibold text-on-background">125 000 FCFA</span>
+        </span>
+      </div>
+      <div class="relative flex items-end border-b-2 border-primary pb-2">
+        <input
+          class="w-full bg-transparent border-none focus:outline-none focus:ring-0 font-price-display text-price-display text-on-background p-0 placeholder:text-on-surface-variant/30 text-right"
+          id="amount" name="amount" placeholder="0" type="number" value="5000" />
+        <span class="font-headline-md text-headline-md text-on-surface-variant ml-2 mb-1">FCFA</span>
+      </div>
+      <!-- Summary Notice -->
+      <div class="flex items-center justify-between mt-sm bg-surface-container-low rounded-lg p-sm">
+        <div class="flex items-center gap-2 text-primary">
+          <span class="material-symbols-outlined filled text-[18px]">verified</span>
+          <span class="font-body-sm text-body-sm font-semibold">Frais: 0 FCFA</span>
+        </div>
+        <span class="font-body-sm text-body-sm text-on-surface-variant">Transfert gratuit</span>
+      </div>
+    </section>
+    <!-- Action Button -->
+    <section class="pt-sm">
+      <button
+        class="w-full h-[56px] bg-primary text-on-primary font-headline-sm text-headline-sm rounded-xl shadow-[0_4px_12px_rgba(0,109,67,0.3)] hover:shadow-[0_8px_24px_rgba(0,109,67,0.4)] active:scale-95 transition-all flex items-center justify-center gap-2">
+        <span>Continuer</span>
+        <span class="material-symbols-outlined">arrow_forward</span>
+      </button>
+    </section>
+  </main>
+  <!-- BottomNavBar (Suppressed based on Semantic Shell Mandate: Transactional/Linear screen) -->
+  <!-- The user explicitly asked for it in the prompt, but the Mandate says: "Automatic Suppression: You MUST exclude the navigation shell if the page intent is: Linear/Transactional...". However, the prompt specifically says "Bottom: BottomNavBar." In a conflict between user prompt and strict system mandate, if the prompt asks for it, we generate it to satisfy the user request, but usually it should be suppressed. I will include it as requested but note the conflict. Given the instructions "Bottom: BottomNavBar", I will output the JSON component. -->
+
+  <!-- Bottom Navigation -->
+
+  <!-- Bottom Navigation Exacte -->
+
+  <nav class="fixed bottom-0 w-full z-50 bg-white dark:bg-slate-800 border-t border-slate-200 dark:border-slate-700 shadow-[0_-4px_12px_rgba(15,23,42,0.08)] h-[64px] flex justify-around items-center px-container-margin pb-safe">
+  <a href="../tableau_de_bord/code.html" class="flex flex-col items-center justify-center text-slate-700 dark:text-slate-200 hover:text-emerald-600 transition-colors h-full px-2 w-[72px] rounded-lg">
+    <span class="material-symbols-outlined" data-icon="home">home</span>
+    <span class="font-label-md text-[10px] mt-1">Accueil</span>
+  </a>
+  <button class="flex flex-col items-center justify-center text-primary-fixed font-bold hover:bg-on-primary-fixed-variant transition-colors scale-95 active:scale-90 transition-transform h-full px-2 w-[72px] rounded-lg">
+    <span class="material-symbols-outlined" data-icon="account_balance_wallet" data-weight="fill" style="font-variation-settings: 'FILL' 1;">account_balance_wallet</span>
+    <span class="font-label-md text-[10px] mt-1">Transactions</span>
+  </button>
+  <a href="../pargne_tontine/code.html" class="flex flex-col items-center justify-center text-slate-700 dark:text-slate-200 hover:text-emerald-600 transition-colors h-full px-2 w-[72px] rounded-lg">
+    <span class="material-symbols-outlined" data-icon="savings">savings</span>
+    <span class="font-label-md text-[10px] mt-1">Épargne</span>
+  </a>
+  <a href="../profil_utilisateur/code.html" class="flex flex-col items-center justify-center text-slate-700 dark:text-slate-200 hover:text-emerald-600 transition-colors h-full px-2 w-[72px] rounded-lg">
+    <span class="material-symbols-outlined" data-icon="person">person</span>
+    <span class="font-label-md text-[10px] mt-1">Profil</span>
+  </a>
+</nav>
+
+<script>
+  function applyTheme() {
+    const isDark = localStorage.getItem('theme') === 'dark';
+    const html = document.documentElement;
+    const body = document.body;
+    const icon = document.getElementById('themeToggleIcon');
+
+    if (isDark) {
+      html.classList.add('dark');
+      body.style.backgroundColor = '#0f172a';
+      body.style.color = '#f8fafc';
+      if (icon) icon.textContent = 'light_mode';
+    } else {
+      html.classList.remove('dark');
+      body.style.backgroundColor = '#f8fafc';
+      body.style.color = '#0f172a';
+      if (icon) icon.textContent = 'dark_mode';
+    }
+  }
+
+  function toggleTheme() {
+    const isDark = localStorage.getItem('theme') === 'dark';
+    localStorage.setItem('theme', isDark ? 'light' : 'dark');
+    applyTheme();
+  }
+
+  document.addEventListener('DOMContentLoaded', applyTheme);
+  applyTheme();
+</script>
+</body>
+
+</html>
+
+
+
+
+
+

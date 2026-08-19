@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+
+<html class="light" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>BeninPay - Connexion</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Sora:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface": "#f8f9ff",
+                      "on-primary-fixed": "#002111",
+                      "inverse-primary": "#4cdf98",
+                      "on-error-container": "#93000a",
+                      "on-error": "#ffffff",
+                      "on-surface-variant": "#3c4a40",
+                      "error-container": "#ffdad6",
+                      "on-secondary-fixed": "#131b2e",
+                      "secondary": "#565e74",
+                      "on-background": "#0b1c30",
+                      "on-primary": "#ffffff",
+                      "secondary-container": "#dae2fd",
+                      "on-tertiary-fixed-variant": "#653e00",
+                      "surface-variant": "#d3e4fe",
+                      "on-secondary": "#ffffff",
+                      "primary": "#006d43",
+                      "outline-variant": "#bbcabe",
+                      "secondary-fixed-dim": "#bec6e0",
+                      "inverse-surface": "#213145",
+                      "on-surface": "#0b1c30",
+                      "on-secondary-fixed-variant": "#3f465c",
+                      "secondary-fixed": "#dae2fd",
+                      "surface-tint": "#006d43",
+                      "surface-container": "#e5eeff",
+                      "inverse-on-surface": "#eaf1ff",
+                      "surface-container-highest": "#d3e4fe",
+                      "primary-fixed": "#6dfcb2",
+                      "tertiary-container": "#e08f00",
+                      "surface-container-lowest": "#ffffff",
+                      "on-tertiary-container": "#503100",
+                      "error": "#ba1a1a",
+                      "on-tertiary-fixed": "#2a1700",
+                      "background": "#f8f9ff",
+                      "outline": "#6c7b70",
+                      "tertiary-fixed-dim": "#ffb95f",
+                      "surface-dim": "#cbdbf5",
+                      "primary-container": "#00b875",
+                      "on-primary-fixed-variant": "#005231",
+                      "surface-bright": "#f8f9ff",
+                      "on-secondary-container": "#5c647a",
+                      "tertiary-fixed": "#ffddb8",
+                      "surface-container-high": "#dce9ff",
+                      "surface-container-low": "#eff4ff",
+                      "on-tertiary": "#ffffff",
+                      "on-primary-container": "#004126",
+                      "primary-fixed-dim": "#4cdf98",
+                      "tertiary": "#855300"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "xs": "8px",
+                      "lg": "24px",
+                      "md": "16px",
+                      "base": "4px",
+                      "xl": "32px",
+                      "sm": "12px",
+                      "container-margin": "20px",
+                      "gutter": "16px"
+              },
+              "fontFamily": {
+                      "price-display": [
+                              "Sora"
+                      ],
+                      "headline-md": [
+                              "Sora"
+                      ],
+                      "label-md": [
+                              "Inter"
+                      ],
+                      "headline-sm": [
+                              "Sora"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "display-lg": [
+                              "Sora"
+                      ],
+                      "body-sm": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "price-display": [
+                              "36px",
+                              {
+                                      "lineHeight": "44px",
+                                      "letterSpacing": "-1px",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "headline-md": [
+                              "24px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "label-md": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-sm": [
+                              "20px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "display-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "40px",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-sm": [
+                              "14px",
+                              {
+                                      "lineHeight": "20px",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="dark:bg-slate-900 dark:text-slate-100 transition-colors duration-200 bg-background text-on-background min-h-screen flex flex-col items-center justify-center font-body-md">
+<!-- Main Container -->
+<main class="w-full max-w-[428px] px-container-margin py-xl flex flex-col flex-grow">
+<!-- Header -->
+<header class="flex flex-col items-center mt-xl mb-xl">
+<div class="w-[80px] h-[80px] bg-primary rounded-xl flex items-center justify-center mb-md shadow-md">
+<span class="material-symbols-outlined text-on-primary" style="font-size: 48px; font-variation-settings: 'FILL' 1;">account_balance_wallet</span>
+</div>
+<h1 class="font-display-lg text-display-lg text-on-background">Bon retour</h1>
+<p class="font-body-md text-body-md text-secondary mt-xs">Connectez-vous à BeninPay</p>
+</header>
+<!-- Form -->
+<form onsubmit="event.preventDefault(); window.location.href='../tableau_de_bord/code.html';" class="flex flex-col flex-grow gap-lg w-full">
+<!-- Phone Number Field -->
+<div class="relative group">
+<label class="absolute -top-[10px] left-sm bg-background px-xs font-label-md text-label-md text-secondary z-10 group-focus-within:text-primary transition-colors" for="phone">Numéro de téléphone</label>
+<div class="flex items-center border border-outline-variant rounded-lg bg-surface-container-lowest focus-within:border-primary focus-within:ring-1 focus-within:ring-primary transition-all h-[56px] px-sm relative overflow-hidden">
+<div class="flex items-center pr-sm border-r border-outline-variant mr-sm">
+<img alt="Drapeau Bénin" class="w-6 h-auto mr-xs rounded-sm border border-outline-variant" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYCOljOmq2dr0fUNt9GvuHnvgJ7t5WFn7_dSacDN8-g0uChaTL3vGMEmxIVW9q51po0JpKlv5HT3cPPbVZieON4VD6w1dgqaViVTk32CbB9XbvYs2-FGZiey6fPmfI_Gj7zS99U7btsKz_w4YtzGGJf3fYX632NPm5AmEcekXfwGLS_iNr8HPk-vM43Af9qWezv8MANlEoAqmYppIY0z8Tnn1kYbNJofdh8unDyrcgD97d-z2gCDyR1A"/>
+<span class="font-body-md text-body-md text-on-background font-medium">+229</span>
+</div>
+<input class="w-full bg-transparent border-none focus:ring-0 font-body-md text-body-md text-on-background placeholder-secondary-fixed-dim" id="phone" placeholder="00 00 00 00" required="" type="tel"/>
+</div>
+</div>
+<!-- PIN Code Field -->
+<div class="relative group">
+<label class="absolute -top-[10px] left-sm bg-background px-xs font-label-md text-label-md text-secondary z-10 group-focus-within:text-primary transition-colors" for="pin">Code PIN</label>
+<div class="flex items-center border border-outline-variant rounded-lg bg-surface-container-lowest focus-within:border-primary focus-within:ring-1 focus-within:ring-primary transition-all h-[56px] px-sm">
+<input class="w-full bg-transparent border-none focus:ring-0 font-body-md text-body-md text-on-background placeholder-secondary-fixed-dim tracking-[0.2em]" id="pin" inputmode="numeric" maxlength="6" placeholder="••••••" required="" type="password"/>
+<button class="p-xs text-secondary hover:text-on-background transition-colors flex items-center justify-center" type="button">
+<span class="material-symbols-outlined">visibility_off</span>
+</button>
+</div>
+</div>
+<!-- Login Button -->
+<button class="w-full h-[56px] bg-primary text-on-primary font-headline-sm text-headline-sm rounded-lg mt-md shadow-sm hover:shadow-md hover:bg-on-primary-fixed-variant transition-all active:scale-[0.98]" type="button" onclick="window.location.href='../tableau_de_bord/code.html'">
+                Se connecter
+            </button>
+<!-- Biometric Login -->
+<div class="flex justify-center mt-md">
+<button class="flex flex-col items-center justify-center w-[80px] h-[80px] rounded-full bg-surface-container-low border border-surface-variant hover:bg-surface-container transition-colors shadow-sm active:scale-[0.98]" type="button">
+<span class="material-symbols-outlined text-primary mb-xs" style="font-size: 32px;">fingerprint</span>
+</button>
+</div>
+<p class="text-center font-label-md text-label-md text-secondary mt-xs">Face ID / Empreinte</p>
+</form>
+<!-- Footer Links -->
+<footer class="mt-auto pt-xl pb-lg flex flex-col items-center gap-md">
+<a class="font-body-sm text-body-sm text-primary hover:underline font-medium" href="../tableau_de_bord/code.html">Code PIN oublié ?</a>
+<div class="h-[1px] w-full max-w-[200px] bg-outline-variant opacity-50"></div>
+<a class="font-body-sm text-body-sm text-secondary flex items-center gap-xs hover:text-primary transition-colors" href="../tableau_de_bord/code.html">
+                Pas encore de compte ? <span class="font-medium text-primary">S'inscrire</span>
+</a>
+</footer>
+</main>
+
+<script>
+  function applyTheme() {
+    const isDark = localStorage.getItem('theme') === 'dark';
+    const html = document.documentElement;
+    const body = document.body;
+    const icon = document.getElementById('themeToggleIcon');
+
+    if (isDark) {
+      html.classList.add('dark');
+      body.style.backgroundColor = '#0f172a';
+      body.style.color = '#f8fafc';
+      if (icon) icon.textContent = 'light_mode';
+    } else {
+      html.classList.remove('dark');
+      body.style.backgroundColor = '#f8fafc';
+      body.style.color = '#0f172a';
+      if (icon) icon.textContent = 'dark_mode';
+    }
+  }
+
+  function toggleTheme() {
+    const isDark = localStorage.getItem('theme') === 'dark';
+    localStorage.setItem('theme', isDark ? 'light' : 'dark');
+    applyTheme();
+  }
+
+  document.addEventListener('DOMContentLoaded', applyTheme);
+  applyTheme();
+</script>
+</body></html>
+
+
+
+
+
+

@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+
+<html class="light" lang="fr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+<title>OPay Benin - Accueil</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&amp;family=Inter:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-tint": "#006d43",
+                        "surface": "#f8f9ff",
+                        "on-primary-container": "#004126",
+                        "on-background": "#0b1c30",
+                        "inverse-on-surface": "#eaf1ff",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed": "#dae2fd",
+                        "tertiary-fixed": "#ffddb8",
+                        "surface-container": "#e5eeff",
+                        "on-surface": "#0b1c30",
+                        "inverse-surface": "#213145",
+                        "error": "#ba1a1a",
+                        "on-error-container": "#93000a",
+                        "surface-container-high": "#dce9ff",
+                        "surface-container-highest": "#d3e4fe",
+                        "on-tertiary-fixed-variant": "#653e00",
+                        "on-surface-variant": "#3c4a40",
+                        "surface-container-low": "#eff4ff",
+                        "on-primary-fixed": "#002111",
+                        "on-primary-fixed-variant": "#005231",
+                        "secondary-container": "#dae2fd",
+                        "surface-bright": "#f8f9ff",
+                        "inverse-primary": "#4cdf98",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary-container": "#503100",
+                        "outline-variant": "#bbcabe",
+                        "outline": "#6c7b70",
+                        "tertiary": "#855300",
+                        "on-secondary-fixed-variant": "#3f465c",
+                        "primary-fixed-dim": "#4cdf98",
+                        "on-tertiary": "#ffffff",
+                        "on-tertiary-fixed": "#2a1700",
+                        "on-secondary-container": "#5c647a",
+                        "on-error": "#ffffff",
+                        "on-secondary-fixed": "#131b2e",
+                        "secondary": "#565e74",
+                        "tertiary-fixed-dim": "#ffb95f",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-container": "#00b875",
+                        "primary": "#006d43",
+                        "secondary-fixed-dim": "#bec6e0",
+                        "surface-dim": "#cbdbf5",
+                        "surface-variant": "#d3e4fe",
+                        "primary-fixed": "#6dfcb2",
+                        "background": "#f8f9ff",
+                        "error-container": "#ffdad6",
+                        "tertiary-container": "#e08f00"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "md": "16px",
+                        "xl": "32px",
+                        "container-margin": "20px",
+                        "lg": "24px",
+                        "gutter": "16px",
+                        "base": "4px",
+                        "sm": "12px",
+                        "xs": "8px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "label-md": ["Inter"],
+                        "headline-md": ["Sora"],
+                        "headline-sm": ["Sora"],
+                        "body-sm": ["Inter"],
+                        "display-lg": ["Sora"],
+                        "price-display": ["Sora"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "display-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "price-display": ["36px", { "lineHeight": "44px", "letterSpacing": "-1px", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="dark:bg-slate-900 dark:text-slate-100 transition-colors duration-200 bg-surface-bright flex justify-center w-full min-h-screen font-body-md text-on-surface pb-24">
+<div class="w-full max-w-md bg-background relative min-h-screen pb-[80px]">
+<!-- Header -->
+<header class="flex justify-between items-center px-container-margin py-md w-full sticky top-0 bg-background z-10">
+<a class="p-2 -ml-2 rounded-full hover:bg-surface-container-low transition-colors" href="../tableau_de_bord/code.html">
+<span class="material-symbols-outlined text-on-surface" data-icon="arrow_back">arrow_back</span>
+</a>
+<h1 class="font-headline-sm text-headline-sm text-on-surface absolute left-1/2 -translate-x-1/2">Mon Profil</h1>
+<div class="w-[40px]"></div> <!-- Spacer for centering -->
+</header>
+<main class="px-container-margin pt-md flex flex-col gap-lg">
+<!-- User Info Card -->
+<section class="flex flex-col items-center gap-xs">
+<div class="relative">
+<img class="w-[96px] h-[96px] rounded-full object-cover border-4 border-surface-container-lowest shadow-[0_4px_12px_rgba(15,23,42,0.08)]" data-alt="A close up, high quality studio portrait of a West African person looking confidently into the camera, representing a user profile photo. The lighting is soft but bright, with a clean solid light background. The subject is wearing professional yet comfortable modern clothing. High detail, photorealistic, modern corporate aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAFRyn9_tXwpAezaJ5L_gry8uCHJ-WbQx8We2Au9AZ_fsmQp31K8ZHov24k_U2RheQxjw8X6MkaL3XQjAL3uuXGD9Sauy6Af76L8cPBhDDopXSVNl4BO86XPG2i_g1-YvXe7A6pQCrZFonRBa5Gd05Xb10SH4RsrwwKFJAbVORZHUM_9V30y9JT-qqgowigVtWXcqqqBoAC44YmP-8MNV58yFp246bFZTX3dGzuMsLN_5-I28MzRwDFg"/>
+<div class="absolute bottom-0 right-0 bg-surface-container-lowest rounded-full p-1 shadow-sm">
+<span class="material-symbols-outlined text-primary text-[20px]" data-icon="edit">edit</span>
+</div>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-surface mt-2">User</h2>
+<p class="font-body-md text-body-md text-secondary">+229 97 00 00 00</p>
+<div class="flex items-center gap-1 bg-[#E6F8F1] px-3 py-1.5 rounded-full mt-1">
+<span class="material-symbols-outlined text-primary-container text-[16px] fill" data-icon="verified">verified</span>
+<span class="font-label-md text-label-md text-primary-container">Compte Vérifié</span>
+</div>
+</section>
+<!-- Account Actions List -->
+<section class="bg-surface-container-lowest rounded-xl shadow-[0_4px_12px_rgba(15,23,42,0.04)] overflow-hidden flex flex-col">
+<button class="flex items-center justify-between p-md hover:bg-surface-container-low transition-colors active:bg-surface-container border-b border-surface-container-low">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" data-icon="person">person</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface">Informations personnelles</span>
+</div>
+<span class="material-symbols-outlined text-outline" data-icon="chevron_right">chevron_right</span>
+</button>
+<button class="flex items-center justify-between p-md hover:bg-surface-container-low transition-colors active:bg-surface-container border-b border-surface-container-low">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" data-icon="lock">lock</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface">Sécurité &amp; Code PIN</span>
+</div>
+<span class="material-symbols-outlined text-outline" data-icon="chevron_right">chevron_right</span>
+</button>
+<button class="flex items-center justify-between p-md hover:bg-surface-container-low transition-colors active:bg-surface-container border-b border-surface-container-low">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" data-icon="credit_card">credit_card</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface">Moyens de paiement &amp; Cartes</span>
+</div>
+<span class="material-symbols-outlined text-outline" data-icon="chevron_right">chevron_right</span>
+</button>
+<button class="flex items-center justify-between p-md hover:bg-surface-container-low transition-colors active:bg-surface-container border-b border-surface-container-low">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" data-icon="history">history</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface">Historique des transactions</span>
+</div>
+<span class="material-symbols-outlined text-outline" data-icon="chevron_right">chevron_right</span>
+</button>
+<button class="flex items-center justify-between p-md hover:bg-surface-container-low transition-colors active:bg-surface-container">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" data-icon="help">help</span>
+</div>
+<span class="font-body-md text-body-md text-on-surface">Centre d'aide &amp; Support</span>
+</div>
+<span class="material-symbols-outlined text-outline" data-icon="chevron_right">chevron_right</span>
+</button>
+</section>
+<!-- Logout Button -->
+<button class="flex items-center justify-center gap-sm p-md w-full bg-error-container rounded-lg hover:bg-[#FFC6C1] transition-colors active:scale-[0.98] mt-sm" onclick="window.location.href='../accueil_beninpay/code.html'">
+<span class="material-symbols-outlined text-error" data-icon="logout">logout</span>
+<span class="font-label-md text-label-md text-error">Se déconnecter</span>
+</button>
+</main>
+<!-- Bottom Navigation Shell -->
+
+</div>
+<nav class="fixed bottom-0 w-full z-50 bg-white dark:bg-slate-800 border-t border-slate-200 dark:border-slate-700 shadow-[0_-4px_12px_rgba(15,23,42,0.08)] h-[64px] flex justify-around items-center px-container-margin pb-safe">
+  <a href="../tableau_de_bord/code.html" class="flex flex-col items-center justify-center text-slate-700 dark:text-slate-200 hover:text-emerald-600 transition-colors h-full px-2 w-[72px] rounded-lg">
+    <span class="material-symbols-outlined" data-icon="home">home</span>
+    <span class="font-label-md text-[10px] mt-1">Accueil</span>
+  </a>
+  <a href="../transfert_inter_r_seaux/code.html" class="flex flex-col items-center justify-center text-slate-700 dark:text-slate-200 hover:text-emerald-600 transition-colors h-full px-2 w-[72px] rounded-lg">
+    <span class="material-symbols-outlined" data-icon="account_balance_wallet">account_balance_wallet</span>
+    <span class="font-label-md text-[10px] mt-1">Transactions</span>
+  </a>
+  <a href="../pargne_tontine/code.html" class="flex flex-col items-center justify-center text-slate-700 dark:text-slate-200 hover:text-emerald-600 transition-colors h-full px-2 w-[72px] rounded-lg">
+    <span class="material-symbols-outlined" data-icon="savings">savings</span>
+    <span class="font-label-md text-[10px] mt-1">Épargne</span>
+  </a>
+  <button class="flex flex-col items-center justify-center text-primary-fixed font-bold hover:bg-on-primary-fixed-variant transition-colors scale-95 active:scale-90 transition-transform h-full px-2 w-[72px] rounded-lg">
+    <span class="material-symbols-outlined" data-icon="person" data-weight="fill" style="font-variation-settings: 'FILL' 1;">person</span>
+    <span class="font-label-md text-[10px] mt-1">Profil</span>
+  </button>
+</nav>
+
+<script>
+  function applyTheme() {
+    const isDark = localStorage.getItem('theme') === 'dark';
+    const html = document.documentElement;
+    const body = document.body;
+    const icon = document.getElementById('themeToggleIcon');
+
+    if (isDark) {
+      html.classList.add('dark');
+      body.style.backgroundColor = '#0f172a';
+      body.style.color = '#f8fafc';
+      if (icon) icon.textContent = 'light_mode';
+    } else {
+      html.classList.remove('dark');
+      body.style.backgroundColor = '#f8fafc';
+      body.style.color = '#0f172a';
+      if (icon) icon.textContent = 'dark_mode';
+    }
+  }
+
+  function toggleTheme() {
+    const isDark = localStorage.getItem('theme') === 'dark';
+    localStorage.setItem('theme', isDark ? 'light' : 'dark');
+    applyTheme();
+  }
+
+  document.addEventListener('DOMContentLoaded', applyTheme);
+  applyTheme();
+</script>
+</body></html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
