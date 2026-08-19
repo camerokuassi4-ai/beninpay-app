@@ -115,7 +115,207 @@
     }
   </style>
 </head>
-<body class="bg-slate-50 text-slate-900"><div class="p-4 flex flex-col gap-6"><nav class="fixed bottom-0 w-full z-50 bg-white border-t border-slate-200 shadow-[0_-4px_12px_rgba(15,23,42,0.08)] h-[64px] flex justify-around items-center px-container-margin pb-safe">
+<body class="dark:bg-slate-900 dark:text-slate-100 transition-colors duration-200 bg-background text-on-background font-body-md min-h-screen flex flex-col pb-[84px]"> <!-- Padding for bottom nav -->
+<!-- TopAppBar -->
+<header class="docked full-width top-0 bg-background dark:bg-background flat no shadows flex justify-between items-center px-container-margin py-md w-full sticky z-40">
+<div class="flex items-center gap-sm">
+<div class="w-10 h-10 rounded-full overflow-hidden bg-surface-container-high border border-outline-variant/30 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary" data-icon="person">person</span>
+</div>
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Bienvenue</span>
+<h1 class="font-headline-sm text-headline-sm text-primary dark:text-primary-fixed-dim">Bonjour, User</h1>
+</div>
+</div>
+<button class="flex-1 py-3 bg-white text-emerald-900 rounded-xl font-semibold flex items-center justify-center gap-2 shadow-sm">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+            Ajouter
+          </button>
+          <button class="flex-1 py-3 bg-emerald-800/60 text-white rounded-xl font-semibold flex items-center justify-center gap-2 border border-emerald-700/50 backdrop-blur-sm">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            Historique
+          </button>
+</div>
+</div>
+</section>
+<!-- Primary Actions Grid -->
+<section>
+<div class="grid grid-cols-4 gap-gutter bg-surface-container-lowest rounded-xl p-md shadow-[0_4px_12px_rgba(15,23,42,0.04)] border border-outline-variant/20">
+<button class="flex flex-col items-center gap-xs group">
+<div class="w-12 h-12 rounded-[16px] bg-surface-container flex items-center justify-center text-primary group-hover:bg-primary-container transition-colors group-hover:shadow-sm">
+<span class="material-symbols-outlined" data-icon="send">send</span>
+</div>
+<span class="font-body-sm text-[13px] text-on-surface-variant text-center leading-tight">Envoyer</span>
+</button>
+<button class="flex flex-col items-center gap-xs group">
+<div class="w-12 h-12 rounded-[16px] bg-secondary-container flex items-center justify-center text-on-secondary-container group-hover:bg-secondary-fixed transition-colors group-hover:shadow-sm">
+<span class="material-symbols-outlined" data-icon="call_received">call_received</span>
+</div>
+<span class="font-body-sm text-[13px] text-on-surface-variant text-center leading-tight">Recevoir</span>
+</button>
+<button class="flex flex-col items-center gap-xs group">
+<div class="w-12 h-12 rounded-[16px] bg-tertiary-container/30 flex items-center justify-center text-tertiary group-hover:bg-tertiary-container/50 transition-colors group-hover:shadow-sm">
+<span class="material-symbols-outlined" data-icon="phone_iphone">phone_iphone</span>
+</div>
+<span class="font-body-sm text-[13px] text-on-surface-variant text-center leading-tight">Crédit</span>
+</button>
+<button class="flex flex-col items-center gap-xs group">
+<div class="w-12 h-12 rounded-[16px] bg-surface-container-highest flex items-center justify-center text-inverse-surface group-hover:bg-surface-dim transition-colors group-hover:shadow-sm">
+<span class="material-symbols-outlined" data-icon="qr_code_scanner">qr_code_scanner</span>
+</div>
+<span class="font-body-sm text-[13px] text-on-surface-variant text-center leading-tight">Scanner QR</span>
+</button>
+</div>
+</section>
+<!-- Services Grid -->
+<section class="flex flex-col gap-sm">
+<h3 class="font-headline-sm text-headline-sm text-on-background">Services</h3>
+<div class="bg-surface-container-lowest rounded-xl p-md shadow-[0_4px_12px_rgba(15,23,42,0.04)] border border-outline-variant/20 grid grid-cols-4 gap-y-lg gap-x-xs">
+<button class="flex flex-col items-center gap-xs group">
+<div class="w-12 h-12 rounded-xl overflow-hidden flex items-center justify-center group-hover:scale-105 transition-transform"><img alt="Transfert Inter" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AP1WRLukfY1sArdliBvuJScpbO7r2zMS4-w82-POkN8AIKSm3kg-KzOltCzmyNoi3zzatHKbBr0kMbSHElOTKG_tJTfXyl9ryTwE0qw5Uv4G7pE_b8-rvDb9aoEGhVkdviy1OfzlApjgxoPMDvExY9470vaLPnOafUzVR4XDmGJBiQlNMyQYVzDDGIEca2jIyvrEKsEY1sgDDf30COHIa-Ad7R6hRMOdjillXJY_hbwj7LKUTV5BQyPbJANelSRD"></div>
+<span class="font-body-sm text-[12px] text-on-surface-variant text-center leading-tight">Transfert<br>Inter</span>
+</button>
+<button class="flex flex-col items-center gap-xs group">
+<div class="w-12 h-12 rounded-xl overflow-hidden flex items-center justify-center group-hover:scale-105 transition-transform"><img alt="Factures SBEE" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AP1WRLvUkP3UKkdqT3m3naqm06FRrhmnA7eJ2bjFAQnl4OXpJ8AQALUTVGGHrA3qDq4XtvYbrgglw4X94QtOq_7QcWKNQUcQ-I1iKfadO_u1lYqLnMhKPsttWyRE1dt5_QQLazXOiUqf9qBN79OFKoSUuZQPqIsC7Zw_C2iPOCkMt3coC5w4KOlwsK104b_rf5kDCYDr06RsEculmTLUJkKCXn1i8RE5dsqZFsjScNnt4Q6tx0rSI7wD8Oxl0Mor"></div>
+<span class="font-body-sm text-[12px] text-on-surface-variant text-center leading-tight">Factures<br>SBEE</span>
+</button>
+<button class="flex flex-col items-center gap-xs group">
+<div class="w-12 h-12 rounded-xl overflow-hidden flex items-center justify-center group-hover:scale-105 transition-transform"><img alt="Canal+" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AP1WRLtl3sEamJSTttaAnjuO2V2i0VBkrbaU0nvxKCcg7yaSGCYuyXzJMvlJtDM-HBMPpoxxN0_cUg5_pI_kxZBILzmXHZtwuwo75y1AFxcykpPAcvl7WVsbmC9Qs5gkcw_ycZpJEF58rCNSVxzZp7bD4avluLRYcX6N2R2RFLOo9vMoLUNk0vFN3MJtI03ceU9JTuB6e9WBn2xXOsH0Guj-aLG3Gk_yitaEXc_-NIhBHf0FwLEWvcmtyGMGlTLU"></div>
+<span class="font-body-sm text-[12px] text-on-surface-variant text-center leading-tight">Canal+</span>
+</button>
+<button class="flex flex-col items-center gap-xs group">
+<div class="w-12 h-12 rounded-xl overflow-hidden flex items-center justify-center group-hover:scale-105 transition-transform"><img alt="Internet" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AP1WRLvkFLBnljfUeDZa9hyJ7qmp-j8AbgyOff9nmLF3ZxLStfuWpn38Ps8TDYeCy3BIas25A__n-IR5TMn0sWYvFZ5Q2oO6a1aSRSkO90I2hXynN7q1nD6uAGP7x3fry91fril5CWQ9g1G5sHezC2raPORuJ_0zOfTkn7-hKcp9Qi51Xj6PBgVR_JIxvBGBNbJq03t_BY9pyH-oJ-dFlLo8ssWyO_BeOT6dTGP1q_jo-49IWdw6N-ENTI62_r8x"></div>
+<span class="font-body-sm text-[12px] text-on-surface-variant text-center leading-tight">Internet</span>
+</button>
+<button class="flex flex-col items-center gap-xs group">
+<div class="w-12 h-12 rounded-xl overflow-hidden flex items-center justify-center group-hover:scale-105 transition-transform"><img alt="Épargne" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AP1WRLvWJdzV6l7TPDGZS9Bu4OqRm55ZngJ_4Q7HEV5xD6saDYJJDYVZKbGJSEASPV_AQpiymITgo-RXGTrj-jD3Bmg68CBbJIq7Tts-ogl6_z-0-UQj8SCPW8nUh-JQGBVwe_SZMhMfaDWfnaSsn2ZGnoayCJ1nIvobDkzUiDY8pATdrIj7Oz3nvtpTWU6s7cwmod_Oe8KSCxbbGnaFwXgrcmhSV9s9QW2xIO99FQnLJJ93aEvWRArXivwFbHRm"></div>
+<span class="font-body-sm text-[12px] text-on-surface-variant text-center leading-tight">Épargne</span>
+</button>
+<button class="flex flex-col items-center gap-xs group">
+<div class="w-12 h-12 rounded-xl overflow-hidden flex items-center justify-center group-hover:scale-105 transition-transform"><img alt="Scolarité" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AP1WRLvGe9UMfUMRBD-uhDf7QFJn5pntAMKrY_Lc4XCj4FKLoZEr3m6MjeCea1scwh_2LNBnWB-B8jOaV8JohWYrMZ2WmDeQY4D31Kc8enQcdWVDZizowQmL01-x7XHNFZq0E3eso8LPmDujUhhZyOno57DzI-CmcX9U4igQeJ8bzCRs_q9c71mNJvRTIj2gr2yyR6bK_geIOZ8vqMvQZyN1kpsTZKcbQsO2L2iBuLiSTwy9-hIq2mKquoa1MMea"></div>
+<span class="font-body-sm text-[12px] text-on-surface-variant text-center leading-tight">Scolarité</span>
+</button>
+<button class="flex flex-col items-center gap-xs group">
+<div class="w-12 h-12 rounded-xl overflow-hidden flex items-center justify-center group-hover:scale-105 transition-transform"><img alt="Plus" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AP1WRLv9rQtSdpTlenMkWG0K8R5aWGUpVFKShfdTcOH3ZC0rfTLeLGfDyXBXFcTkQ098NarGOzJN0pZWJt47lhWu5hO10H2tW0kclrJ9EaSrEULSCxZvlwtc9LNtMjkNah4VhvQv7C_CXMa-VFYf9k8h-PKJH6NuuXhzv4NYLsxeoe0ellnMTzomPh0DoStD_sNYOQz2kmkuF1G2poo6FS0TSwUyDFL6y53maKu_SjL5m3hGkMDUMkVgOHjXnBR9"></div>
+<span class="font-body-sm text-[12px] text-on-surface-variant text-center leading-tight">Plus</span>
+</button>
+</div>
+</section>
+<!-- Wallet Hub: Mes Comptes -->
+<section class="flex flex-col gap-sm">
+<div class="flex justify-between items-end">
+<h3 class="font-headline-sm text-headline-sm text-on-background">Mes Comptes</h3>
+<button class="font-label-md text-label-md text-primary">Gérer</button>
+</div>
+<div class="flex gap-md overflow-x-auto hide-scrollbar pb-2 -mx-container-margin px-container-margin snap-x">
+<!-- MTN MoMo -->
+<div class="min-w-[160px] bg-surface-container-lowest rounded-xl p-md shadow-[0_4px_12px_rgba(15,23,42,0.04)] border border-outline-variant/20 flex flex-col gap-sm snap-start">
+<div class="w-10 h-10 rounded-full overflow-hidden shrink-0 border border-outline-variant/20"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBsmFcq4511gpOPTejcjeuRZfBtPJKDjbSDMu4Ddnc2ivnrWP85in_jLpz9b-wUAi0i4qnq9ntIk0L1GkO2TsyKBTMLjGgIbWpTdVhIhSk5P_8OwCGZCTc1vH5XMZKuTEeKzGFBScGZev3c48amLj9Hg7Zos8X1TZloWYqf--zWyQzzjjsdAEAUkc-5AokKtRGaLDQ4-MwYFEKDMLxkJ5KkWlZHdoKq6qBw7DRGbw25oXAqOhZQtEgD0A" alt="MTN MoMo" class="w-full h-full object-cover"></div>
+<div>
+<p class="font-body-sm text-body-sm text-on-background font-semibold">MTN MoMo</p>
+<p class="font-label-md text-[10px] text-on-surface-variant mt-1">*** 4532</p>
+</div>
+</div>
+<!-- Moov Money -->
+<div class="min-w-[160px] bg-surface-container-lowest rounded-xl p-md shadow-[0_4px_12px_rgba(15,23,42,0.04)] border border-outline-variant/20 flex flex-col gap-sm snap-start">
+<div class="w-10 h-10 rounded-full overflow-hidden shrink-0 border border-outline-variant/20"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYWpGwonCInIYh23fJMMfbaH6s0oPPy0wbl54KP7Mtj2TGUOeofspaLLrdqYn72jJiOUOxeOe5ji1zh3psVzHDyivqS14JGu771IOCf0I8eAqOA96R3nv_1-_zPC0VBlJCd87Nw8dYGNOUVRPE4InB_O5lZT9N19Cqu9C_nvarFuNbyWNTZ4Y7AnPiaJiepbwXJfYsoUbxVUZj2Bak9Li2OD9iki-XRHxkRJ4omrRqPeltq9lOx_6JFA" alt="Moov Money" class="w-full h-full object-cover"></div>
+<div>
+<p class="font-body-sm text-body-sm text-on-background font-semibold">Moov Money</p>
+<p class="font-label-md text-[10px] text-on-surface-variant mt-1">*** 8901</p>
+</div>
+</div>
+<!-- Celtiis Cash -->
+<div class="min-w-[160px] bg-surface-container-lowest rounded-xl p-md shadow-[0_4px_12px_rgba(15,23,42,0.04)] border border-outline-variant/20 flex flex-col gap-sm snap-start">
+<div class="w-10 h-10 rounded-full overflow-hidden shrink-0 border border-outline-variant/20"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXLdkUFptRhcFlT9f-VP9TAqQTFYgQm8VjNAvHMFXWv9CBi5QTpixIXWNJEu6XErSc_5FL6jcGqFY3bJgTBtmDC-ZOjSwXN-JgPB3M1XHoNyR2unZKYSdsNcfEmZPecSHKUMYYHRaLQ21M8rMHsN6OzKImqTlz6o70s6GD6BD5qJDZDMMS-aJL9BpaANxNTJmBljWsjuQe_K9h518wTe9_LsG7HM06ghsM7Ko1wSe6pOSZpiLG1VI6qw" alt="Celtiis Cash" class="w-full h-full object-cover"></div>
+<div>
+<p class="font-body-sm text-body-sm text-on-background font-semibold">Celtiis Cash</p>
+<p class="font-label-md text-[10px] text-on-surface-variant mt-1">*** 2210</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Feed: Transactions Récentes -->
+<section class="flex flex-col gap-sm">
+<div class="flex justify-between items-end">
+<h3 class="font-headline-sm text-headline-sm text-on-background">Transactions Récentes</h3>
+<button class="font-label-md text-label-md text-primary">Voir tout</button>
+</div>
+<div class="bg-surface-container-lowest rounded-xl shadow-[0_4px_12px_rgba(15,23,42,0.04)] border border-outline-variant/20 divide-y divide-outline-variant/20">
+<!-- Transaction Item 1 -->
+<div class="flex items-center justify-between p-md h-[72px]">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant shrink-0">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+</div>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md text-on-background font-semibold leading-tight">Ablavi S.</span>
+<span class="font-body-sm text-[12px] text-on-surface-variant mt-0.5">14 Oct, 10:24 • <span class="text-primary">Succès</span></span>
+</div>
+</div>
+<span class="font-body-md text-body-md text-on-background font-semibold">-5.000 FCFA</span>
+</div>
+<!-- Transaction Item 2 -->
+<div class="flex items-center justify-between p-md h-[72px]">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container shrink-0">
+<span class="material-symbols-outlined" data-icon="lightbulb">lightbulb</span>
+</div>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md text-on-background font-semibold leading-tight">Facture SBEE</span>
+<span class="font-body-sm text-[12px] text-on-surface-variant mt-0.5">12 Oct, 08:15 • <span class="text-primary">Succès</span></span>
+</div>
+</div>
+<span class="font-body-md text-body-md text-on-background font-semibold">-12.500 FCFA</span>
+</div>
+<!-- Transaction Item 3 -->
+<div class="flex items-center justify-between p-md h-[72px]">
+<div class="flex items-center gap-md">
+<div class="w-10 h-10 rounded-full bg-[#FFCC00]/20 flex items-center justify-center text-[#FFCC00] shrink-0">
+<span class="material-symbols-outlined" data-icon="arrow_downward">arrow_downward</span>
+</div>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md text-on-background font-semibold leading-tight">Recharge MTN</span>
+<span class="font-body-sm text-[12px] text-on-surface-variant mt-0.5">10 Oct, 16:42 • <span class="text-primary">Succès</span></span>
+</div>
+</div>
+<span class="font-body-md text-body-md text-primary font-semibold">+25.000 FCFA</span>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+
+
+<script>
+  function applyTheme() {
+    const isDark = localStorage.getItem('theme') === 'dark';
+    const html = document.documentElement;
+    const body = document.body;
+    const icon = document.getElementById('themeToggleIcon');
+
+    if (isDark) {
+      html.classList.add('dark');
+      body.style.backgroundColor = '#0f172a';
+      body.style.color = '#f8fafc';
+      if (icon) icon.textContent = 'light_mode';
+    } else {
+      html.classList.remove('dark');
+      body.style.backgroundColor = '#f8fafc';
+      body.style.color = '#0f172a';
+      if (icon) icon.textContent = 'dark_mode';
+    }
+  }
+
+  function toggleTheme() {
+    const isDark = localStorage.getItem('theme') === 'dark';
+    localStorage.setItem('theme', isDark ? 'light' : 'dark');
+    applyTheme();
+  }
+
+  document.addEventListener('DOMContentLoaded', applyTheme);
+  applyTheme();
+</script>
+<nav class="fixed bottom-0 w-full z-50 bg-white border-t border-slate-200 shadow-[0_-4px_12px_rgba(15,23,42,0.08)] h-[64px] flex justify-around items-center px-container-margin pb-safe">
   <button class="flex flex-col items-center justify-center text-primary-fixed font-bold hover:bg-on-primary-fixed-variant transition-colors scale-95 active:scale-90 transition-transform h-full px-2 w-[72px] rounded-lg">
     <span class="material-symbols-outlined" data-icon="home" data-weight="fill" style="font-variation-settings: 'FILL' 1;">home</span>
     <span class="font-label-md text-[10px] mt-1">Accueil</span>
@@ -150,7 +350,7 @@
 
   document.addEventListener('DOMContentLoaded', syncDashboard);
 </script>
-</div></body></html>
+</body></html>
 
 
 
