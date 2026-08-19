@@ -2,12 +2,12 @@ const express = require('express');
 const path = require('path');
 const app = express();
 
-// Sert tous les fichiers statiques (HTML, CSS, JS, images)
+// Sert les fichiers statiques du projet
 app.use(express.static(__dirname));
 
-// Route d'accueil
+// Route d'accueil vers le tableau de bord
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'tableau_de_.../code.html'));
+  res.sendFile(path.join(__dirname, 'tableau_de_bord', 'code.html'));
 });
 
 module.exports = app;
