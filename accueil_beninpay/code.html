@@ -102,6 +102,16 @@
         }
     </script>
     <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        #services,
+        #securite,
+        #aide {
+            scroll-margin-top: 96px;
+        }
+
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
@@ -141,6 +151,20 @@
             background-image: radial-gradient(at 100% 0%, hsla(158, 100%, 74%, 0.1) 0px, transparent 50%),
                 radial-gradient(at 0% 100%, hsla(226, 89%, 91%, 0.2) 0px, transparent 50%);
         }
+
+        /* Menu mobile */
+        #mobile-menu {
+            transform: translateY(-8px);
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.25s ease, transform 0.25s ease;
+        }
+
+        #mobile-menu.open {
+            transform: translateY(0);
+            opacity: 1;
+            pointer-events: auto;
+        }
     </style>
 </head>
 
@@ -161,12 +185,12 @@
                     href="#aide">Aide</a>
             </div>
             <div class="flex items-center gap-md">
-                <!-- Sélecteur de langues -->
-                <div class="relative group hidden md:block">
-                    <button
+                <!-- Sélecteur de langues (à côté du bouton menu, visible desktop + mobile) -->
+                <div class="relative group">
+                    <button type="button"
                         class="flex items-center gap-xs font-label-md text-label-md text-primary hover:bg-surface-variant/50 px-sm py-xs rounded-full transition-colors">
                         <span class="material-symbols-outlined text-[18px]">language</span>
-                        <span>FR</span>
+                        <span class="hidden sm:inline">FR</span>
                         <span class="material-symbols-outlined text-[16px]">arrow_drop_down</span>
                     </button>
                     <div
@@ -186,14 +210,24 @@
                     </div>
                 </div>
 
-                <!-- Bouton Se connecter vers connexion/code.html -->
-                <a href="../connexion/code.html" class="hidden md:block font-label-md text-label-md text-primary border border-primary/30 px-lg py-sm rounded-full hover:bg-primary/5 hover:border-primary transition-all duration-300">Se connecter</a>
-                <!-- Bouton Créer un compte vers inscription_kyc/code.html -->
-                <a href="../inscription_kyc/code.html" class="font-label-md text-label-md bg-primary text-on-primary px-lg py-sm rounded-full hover:bg-primary/90 hover:shadow-lg hover:shadow-primary/20 hover:-translate-y-0.5 transition-all active:scale-95 duration-300">Créer un compte</a>
-                <button
+                <button id="mobile-menu-btn" type="button" aria-label="Ouvrir le menu" aria-expanded="false"
+                    aria-controls="mobile-menu"
                     class="md:hidden flex items-center text-primary ml-xs p-xs rounded-full hover:bg-surface-variant/50">
-                    <span class="material-symbols-outlined">menu</span>
+                    <span id="mobile-menu-icon" class="material-symbols-outlined">menu</span>
                 </button>
+            </div>
+        </div>
+
+        <!-- Panneau menu mobile -->
+        <div id="mobile-menu"
+            class="md:hidden absolute top-full left-0 w-full glass-panel border-t border-white/40 shadow-lg">
+            <div class="flex flex-col px-container-margin py-md gap-xs">
+                <a href="#services"
+                    class="font-label-md text-label-md text-on-surface-variant hover:text-primary hover:bg-surface-variant/30 transition-colors uppercase tracking-wider px-sm py-sm rounded-xl">Services</a>
+                <a href="#securite"
+                    class="font-label-md text-label-md text-on-surface-variant hover:text-primary hover:bg-surface-variant/30 transition-colors uppercase tracking-wider px-sm py-sm rounded-xl">Sécurité</a>
+                <a href="#aide"
+                    class="font-label-md text-label-md text-on-surface-variant hover:text-primary hover:bg-surface-variant/30 transition-colors uppercase tracking-wider px-sm py-sm rounded-xl">Aide</a>
             </div>
         </div>
     </nav>
@@ -208,17 +242,15 @@
                     class="font-display-lg text-[40px] leading-[48px] md:text-[56px] md:leading-[64px] lg:text-[64px] lg:leading-[72px] text-primary tracking-tight text-balance drop-shadow-sm">
                     Votre argent, partout au Bénin, sans agence.
                 </h1>
-                <p
-                    class="font-body-lg text-body-lg text-on-surface-variant max-w-xl mx-auto lg:mx-0 text-balance opacity-90 leading-relaxed">
-                    L'application unique pour gérer vos finances. Connectez instantanément vos portefeuilles mobiles et
-                    vos comptes bancaires. Payez, transférez et épargnez en toute simplicité.
-                </p>
                 <div class="flex flex-col sm:flex-row gap-md justify-center lg:justify-start pt-md">
                     <!-- Bouton d'action principal vers inscription_kyc/code.html -->
-                    <a href="../inscription_kyc/code.html" class="inline-flex justify-center items-center h-[56px] px-xl bg-primary text-on-primary font-label-md text-label-md rounded-full shadow-[0_8px_24px_rgba(0,109,67,0.25)] hover:bg-primary/90 hover:shadow-[0_12px_32px_rgba(0,109,67,0.35)] hover:-translate-y-1 transition-all active:scale-95 duration-300">Créer un compte gratuit</a>
+                    <a href="../inscription_kyc/code.html"
+                        class="inline-flex justify-center items-center h-[56px] px-xl bg-primary text-on-primary font-label-md text-label-md rounded-full shadow-[0_8px_24px_rgba(0,109,67,0.25)] hover:bg-primary/90 hover:shadow-[0_12px_32px_rgba(0,109,67,0.35)] hover:-translate-y-1 transition-all active:scale-95 duration-300">Créer
+                        un compte gratuit</a>
+                    <!-- Bouton Se connecter (remplace En savoir plus) vers connexion/code.html -->
                     <a class="inline-flex justify-center items-center h-[56px] px-xl glass-panel text-primary font-label-md text-label-md rounded-full hover:bg-white/80 transition-all active:scale-95 duration-300"
-                        href="#services">
-                        En savoir plus
+                        href="../connexion/code.html">
+                        Se connecter
                     </a>
                 </div>
             </div>
@@ -230,8 +262,13 @@
                         alt="Businesswoman avec smartphone"
                         src="https://lh3.googleusercontent.com/aida-public/AB6AXuCsDDCEqSTJZeRXokISaQ_keF3xDyPE9c7vlbQKfZpSn-7PUeefGun8cMwB11yqd48M4Ig2GUHyoJOUE1AbGFJ65Rf3eJTy4UDbGm_2AZNDfv-NgUzPj10X1wgTgpjSERXfqE5gSs4-ixRNjNOMP1JuVfzrSTBdQjfSbPZZiu-a64bqnM06KJAiduZEA6_PJRYK_KbT0dudwc6sVdQdVvzg4MxmTLXP0iqqTg0JszMYvjM6uu_-g9Fc6Q">
                     <div
-                        class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none">
+                        class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent pointer-events-none">
                     </div>
+                    <p
+                        class="absolute bottom-0 left-0 right-0 p-lg md:p-xl font-body-lg text-body-lg text-white text-balance opacity-95 leading-relaxed z-10">
+                        L'application unique pour gérer vos finances. Connectez instantanément vos portefeuilles
+                        mobiles et vos comptes bancaires. Payez, transférez et épargnez en toute simplicité.
+                    </p>
                 </div>
             </div>
         </div>
@@ -434,6 +471,50 @@
             </div>
         </div>
     </section>
+
+    <script>
+            (function () {
+                var btn = document.getElementById('mobile-menu-btn');
+                var menu = document.getElementById('mobile-menu');
+                var icon = document.getElementById('mobile-menu-icon');
+
+                function closeMenu() {
+                    menu.classList.remove('open');
+                    btn.setAttribute('aria-expanded', 'false');
+                    icon.textContent = 'menu';
+                }
+
+                function toggleMenu() {
+                    var isOpen = menu.classList.toggle('open');
+                    btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+                    icon.textContent = isOpen ? 'close' : 'menu';
+                }
+
+                btn.addEventListener('click', function (e) {
+                    e.stopPropagation();
+                    toggleMenu();
+                });
+
+                // Ferme le menu si on clique sur un lien à l'intérieur
+                menu.querySelectorAll('a').forEach(function (link) {
+                    link.addEventListener('click', closeMenu);
+                });
+
+                // Ferme le menu si on clique en dehors
+                document.addEventListener('click', function (e) {
+                    if (!menu.contains(e.target) && !btn.contains(e.target)) {
+                        closeMenu();
+                    }
+                });
+
+                // Ferme le menu si on repasse en vue desktop
+                window.addEventListener('resize', function () {
+                    if (window.innerWidth >= 768) {
+                        closeMenu();
+                    }
+                });
+            })();
+    </script>
 </body>
 
 </html>
