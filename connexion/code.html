@@ -231,7 +231,8 @@
                                                         class="font-body-md text-body-md text-on-background font-medium">+229</span>
                                         </div>
                                         <input class="w-full bg-transparent border-none focus:ring-0 font-body-md text-body-md text-on-background placeholder-secondary-fixed-dim"
-                                                id="phone" placeholder="00 00 00 00" required="" type="tel" />
+                                                id="phone" inputmode="numeric" maxlength="10" placeholder="00 00 00 00"
+                                                required="" type="tel" />
                                 </div>
                         </div>
                         <!-- PIN Code Field -->
@@ -267,11 +268,11 @@
                 </form>
                 <!-- Footer Links -->
                 <footer class="mt-auto pt-xl pb-lg flex flex-col items-center gap-md">
-                        <a class="font-body-sm text-body-sm text-primary hover:underline font-medium"
-                                href="../tableau_de_bord/code.html">Code PIN oublié ?</a>
+                        <a class="font-body-sm text-body-sm text-primary hover:underline font-medium" href="#">Code PIN
+                                oublié ?</a>
                         <div class="h-[1px] w-full max-w-[200px] bg-outline-variant opacity-50"></div>
                         <a class="font-body-sm text-body-sm text-secondary flex items-center gap-xs hover:text-primary transition-colors"
-                                href="../tableau_de_bord/code.html">
+                                href="../inscription_kyc/code.html">
                                 Pas encore de compte ? <span class="font-medium text-primary">S'inscrire</span>
                         </a>
                 </footer>
@@ -361,22 +362,38 @@
 
                         let hasError = false;
 
-                        if (phoneValue.length < 8) {
+                        if (phoneValue.length !== 10 || !/^\d{10}$/.test(phoneValue)) {
                                 phoneWrapper.classList.add('field-error');
                                 hasError = true;
                         }
 
-                        if (pinValue.length < 4) {
+                        if (pinValue.length !== 6 || !/^\d{6}$/.test(pinValue)) {
                                 pinWrapper.classList.add('field-error');
                                 hasError = true;
                         }
 
                         if (hasError) {
-                                showFormError('Veuillez saisir un numéro de téléphone et un code PIN valides.');
+                                showFormError('Veuillez saisir un numéro de téléphone (10 chiffres) et un code PIN (6 chiffres) valides.');
                                 return;
                         }
 
-                        // Données valides : accès au tableau de bord
+                        // Vérifie que ces identifiants correspondent bien à un compte créé
+                        const registeredPhone = localStorage.getItem('beninpay_phone');
+                        const registeredPin = localStorage.getItem('beninpay_pin');
+
+                        if (!registeredPhone || !registeredPin) {
+                                showFormError('Aucun compte trouvé. Veuillez créer un compte.');
+                                return;
+                        }
+
+                        if (phoneValue !== registeredPhone || pinValue !== registeredPin) {
+                                phoneWrapper.classList.add('field-error');
+                                pinWrapper.classList.add('field-error');
+                                showFormError('Numéro de téléphone ou code PIN incorrect.');
+                                return;
+                        }
+
+                        // Identifiants corrects : accès au tableau de bord
                         window.location.href = '../tableau_de_bord/code.html';
                 });
         </script>

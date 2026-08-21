@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+
+<html class="light" lang="fr">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>BeninPay - Étape 3 sur 3 : Sécurité</title>
+    <!-- Material Symbols -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Sora:wght@400;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-fixed-dim": "#ffb95f",
+                        "inverse-primary": "#4cdf98",
+                        "primary-fixed": "#6dfcb2",
+                        "tertiary-fixed": "#ffddb8",
+                        "on-primary": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "outline-variant": "#bbcabe",
+                        "on-tertiary-container": "#503100",
+                        "on-tertiary-fixed": "#2a1700",
+                        "inverse-surface": "#213145",
+                        "on-background": "#0b1c30",
+                        "surface-container-highest": "#d3e4fe",
+                        "surface-container": "#e5eeff",
+                        "surface": "#f8f9ff",
+                        "on-error-container": "#93000a",
+                        "surface-variant": "#d3e4fe",
+                        "primary": "#006d43",
+                        "error-container": "#ffdad6",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-bright": "#f8f9ff",
+                        "on-surface": "#0b1c30",
+                        "on-secondary-fixed-variant": "#3f465c",
+                        "on-primary-fixed": "#002111",
+                        "surface-dim": "#cbdbf5",
+                        "surface-container-low": "#eff4ff",
+                        "inverse-on-surface": "#eaf1ff",
+                        "primary-container": "#00b875",
+                        "secondary": "#565e74",
+                        "on-error": "#ffffff",
+                        "primary-fixed-dim": "#4cdf98",
+                        "tertiary": "#855300",
+                        "secondary-fixed-dim": "#bec6e0",
+                        "on-secondary-fixed": "#131b2e",
+                        "background": "#f8f9ff",
+                        "surface-container-high": "#dce9ff",
+                        "tertiary-container": "#e08f00",
+                        "on-surface-variant": "#3c4a40",
+                        "secondary-container": "#dae2fd",
+                        "error": "#ba1a1a",
+                        "secondary-fixed": "#dae2fd",
+                        "on-primary-container": "#004126",
+                        "on-tertiary-fixed-variant": "#653e00",
+                        "on-primary-fixed-variant": "#005231",
+                        "surface-tint": "#006d43",
+                        "on-secondary-container": "#5c647a",
+                        "outline": "#6c7b70",
+                        "on-secondary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xl": "32px",
+                        "base": "4px",
+                        "md": "16px",
+                        "gutter": "16px",
+                        "lg": "24px",
+                        "xs": "8px",
+                        "sm": "12px",
+                        "container-margin": "20px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Inter"],
+                        "price-display": ["Sora"],
+                        "headline-sm": ["Sora"],
+                        "body-md": ["Inter"],
+                        "label-md": ["Inter"],
+                        "display-lg": ["Sora"],
+                        "headline-md": ["Sora"],
+                        "body-sm": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "price-display": ["36px", { "lineHeight": "44px", "letterSpacing": "-1px", "fontWeight": "700" }],
+                        "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "display-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .pin-dot {
+            transition: all 0.2s ease-in-out;
+        }
+
+        .pin-dot.filled {
+            background-color: #006d43;
+            border-color: #006d43;
+            transform: scale(1.1);
+        }
+
+        .pin-dot.active {
+            border-color: #006d43;
+            box-shadow: 0 0 0 4px #d3e4fe;
+        }
+
+        .pin-dot.error {
+            border-color: #ba1a1a;
+            background-color: #ba1a1a;
+        }
+
+        #pin-error {
+            display: none;
+        }
+
+        #pin-error.show {
+            display: flex;
+        }
+    </style>
+</head>
+
+<body
+    class="bg-gradient-to-b from-surface to-surface-container-low text-on-surface font-body-md min-h-screen flex flex-col antialiased selection:bg-primary-container selection:text-on-primary">
+    <!-- Transactional Header -->
+    <header
+        class="flex items-center justify-between px-container-margin py-md w-full max-w-screen-md mx-auto relative z-10">
+        <button aria-label="Retour"
+            class="p-2 -ml-2 rounded-full hover:bg-surface-variant transition-colors active:scale-95 text-on-surface"
+            onclick="window.location.href='../inscription_tape_2_otp/code.html'" type="button">
+            <span class="material-symbols-outlined" data-icon="arrow_back"
+                style="font-variation-settings: 'FILL' 0;">arrow_back</span>
+        </button>
+        <div class="absolute left-1/2 -translate-x-1/2">
+            <h1 class="font-headline-sm text-headline-sm font-bold text-primary tracking-tight">BeninPay</h1>
+        </div>
+        <div class="w-10"></div> <!-- Spacer for centering -->
+    </header>
+    <!-- Main Content -->
+    <main class="flex-grow flex flex-col px-container-margin py-lg w-full max-w-screen-md mx-auto">
+        <!-- Progress Stepper -->
+        <div class="w-full flex flex-col gap-xs mb-xl">
+            <div class="flex justify-between items-center w-full">
+                <span class="font-label-md text-label-md text-secondary uppercase tracking-wider">Étape 3 sur 3</span>
+            </div>
+            <div class="w-full h-1.5 bg-surface-variant rounded-full overflow-hidden">
+                <div class="h-full bg-primary-container rounded-full w-full transition-all duration-500 ease-out"></div>
+            </div>
+        </div>
+        <!-- Typography Header -->
+        <div class="mb-xl text-center md:text-left">
+            <h2 class="font-headline-md text-headline-md text-on-background mb-xs">Créez votre code PIN</h2>
+            <p class="font-body-md text-body-md text-secondary">Ce code à 6 chiffres sécurisera vos futures connexions
+                et toutes vos transactions.</p>
+        </div>
+
+        <!-- Message d'erreur -->
+        <div class="items-center gap-xs bg-error-container text-error rounded-lg px-sm py-xs mb-md font-body-sm text-body-sm"
+            id="pin-error">
+            <span class="material-symbols-outlined" style="font-size: 18px;">error</span>
+            <span id="pin-error-text">Veuillez saisir un code PIN complet.</span>
+        </div>
+
+        <!-- PIN Inputs Area -->
+        <div
+            class="flex flex-col gap-xl bg-surface-container-lowest p-lg rounded-xl shadow-sm border border-surface-variant mb-xl">
+            <!-- First PIN Entry -->
+            <div class="flex flex-col items-center">
+                <label class="font-label-md text-label-md text-on-surface-variant mb-md uppercase tracking-wider"
+                    for="real-pin-1">Code PIN</label>
+                <div aria-label="Saisie du code PIN" class="flex justify-center gap-sm cursor-text" id="pin-input-1"
+                    role="group">
+                    <div class="pin-dot w-4 h-4 rounded-full border-2 border-outline-variant bg-surface active"></div>
+                    <div class="pin-dot w-4 h-4 rounded-full border-2 border-outline-variant bg-surface"></div>
+                    <div class="pin-dot w-4 h-4 rounded-full border-2 border-outline-variant bg-surface"></div>
+                    <div class="pin-dot w-4 h-4 rounded-full border-2 border-outline-variant bg-surface"></div>
+                    <div class="pin-dot w-4 h-4 rounded-full border-2 border-outline-variant bg-surface"></div>
+                    <div class="pin-dot w-4 h-4 rounded-full border-2 border-outline-variant bg-surface"></div>
+                </div>
+                <!-- Vrai champ de saisie (clavier numérique) -->
+                <input autocomplete="off" class="opacity-0 absolute h-0 w-0" id="real-pin-1" inputmode="numeric"
+                    maxlength="6" pattern="[0-9]*" type="password" />
+            </div>
+            <div class="w-full h-px bg-surface-variant"></div>
+            <!-- Confirmation PIN Entry -->
+            <div class="flex flex-col items-center opacity-50 transition-opacity" id="pin-confirm-container">
+                <label class="font-label-md text-label-md text-on-surface-variant mb-md uppercase tracking-wider"
+                    for="real-pin-2">Confirmer le code PIN</label>
+                <div aria-label="Confirmation du code PIN" class="flex justify-center gap-sm cursor-text"
+                    id="pin-input-2" role="group">
+                    <div class="pin-dot w-4 h-4 rounded-full border-2 border-outline-variant bg-surface"></div>
+                    <div class="pin-dot w-4 h-4 rounded-full border-2 border-outline-variant bg-surface"></div>
+                    <div class="pin-dot w-4 h-4 rounded-full border-2 border-outline-variant bg-surface"></div>
+                    <div class="pin-dot w-4 h-4 rounded-full border-2 border-outline-variant bg-surface"></div>
+                    <div class="pin-dot w-4 h-4 rounded-full border-2 border-outline-variant bg-surface"></div>
+                    <div class="pin-dot w-4 h-4 rounded-full border-2 border-outline-variant bg-surface"></div>
+                </div>
+                <input autocomplete="off" class="opacity-0 absolute h-0 w-0" disabled="" id="real-pin-2"
+                    inputmode="numeric" maxlength="6" pattern="[0-9]*" type="password" />
+            </div>
+        </div>
+        <!-- Terms and Conditions -->
+        <label
+            class="flex items-start gap-sm cursor-pointer group mt-auto mb-lg p-sm -mx-sm rounded-lg hover:bg-surface-variant transition-colors">
+            <div class="relative flex items-center justify-center mt-1">
+                <input
+                    class="peer appearance-none w-5 h-5 border-2 border-outline rounded bg-surface-container-lowest checked:bg-primary-container checked:border-primary-container focus:ring-2 focus:ring-primary-container focus:ring-offset-2 focus:ring-offset-background transition-colors cursor-pointer"
+                    id="terms-checkbox" type="checkbox" />
+                <span
+                    class="material-symbols-outlined absolute text-on-primary opacity-0 peer-checked:opacity-100 pointer-events-none text-[18px]"
+                    data-icon="check" style="font-variation-settings: 'FILL' 1;">check</span>
+            </div>
+            <span
+                class="font-body-sm text-body-sm text-on-surface-variant group-hover:text-on-surface transition-colors pt-0.5">
+                J'accepte les <a class="text-primary font-semibold hover:underline" href="#">Conditions
+                    d'utilisation</a> et la <a class="text-primary font-semibold hover:underline" href="#">Politique de
+                    confidentialité</a>
+            </span>
+        </label>
+    </main>
+    <!-- Bottom Action Area -->
+    <div
+        class="px-container-margin pb-container-margin pt-sm w-full max-w-screen-md mx-auto bg-gradient-to-t from-surface to-transparent">
+        <button
+            class="w-full h-[56px] flex items-center justify-center bg-primary-container text-on-primary rounded-xl font-headline-sm text-headline-sm shadow-md hover:bg-primary transition-all active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed"
+            id="create-account-btn" type="button">
+            Créer mon compte
+        </button>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const pin1Container = document.getElementById('pin-input-1');
+            const pin2Container = document.getElementById('pin-input-2');
+            const confirmArea = document.getElementById('pin-confirm-container');
+            const realPin1 = document.getElementById('real-pin-1');
+            const realPin2 = document.getElementById('real-pin-2');
+            const termsCheckbox = document.getElementById('terms-checkbox');
+            const pinError = document.getElementById('pin-error');
+            const pinErrorText = document.getElementById('pin-error-text');
+            const createBtn = document.getElementById('create-account-btn');
+
+            function renderDots(container, value, showError) {
+                const dots = container.querySelectorAll('.pin-dot');
+                dots.forEach(function (dot, index) {
+                    dot.classList.remove('filled', 'active', 'error');
+                    if (index < value.length) {
+                        dot.classList.add(showError ? 'error' : 'filled');
+                    } else if (index === value.length) {
+                        dot.classList.add('active');
+                    }
+                });
+            }
+
+            function hideError() {
+                pinError.classList.remove('show');
+            }
+
+            // Ouvre le clavier numérique au clic sur les points
+            pin1Container.addEventListener('click', () => {
+                realPin1.focus();
+            });
+            pin2Container.addEventListener('click', () => {
+                if (!realPin2.disabled) realPin2.focus();
+            });
+
+            realPin1.addEventListener('input', () => {
+                realPin1.value = realPin1.value.replace(/[^0-9]/g, '').slice(0, 6);
+                hideError();
+                renderDots(pin1Container, realPin1.value, false);
+
+                if (realPin1.value.length === 6) {
+                    confirmArea.classList.remove('opacity-50');
+                    realPin2.disabled = false;
+                    realPin2.value = '';
+                    renderDots(pin2Container, '', false);
+                    realPin2.focus();
+                } else {
+                    confirmArea.classList.add('opacity-50');
+                    realPin2.disabled = true;
+                    realPin2.value = '';
+                    renderDots(pin2Container, '', false);
+                }
+            });
+
+            realPin2.addEventListener('input', () => {
+                realPin2.value = realPin2.value.replace(/[^0-9]/g, '').slice(0, 6);
+                hideError();
+                renderDots(pin2Container, realPin2.value, false);
+            });
+
+            createBtn.addEventListener('click', () => {
+                hideError();
+
+                const pin1 = realPin1.value;
+                const pin2 = realPin2.value;
+
+                if (pin1.length !== 6) {
+                    pinErrorText.textContent = 'Veuillez saisir un code PIN à 6 chiffres.';
+                    pinError.classList.add('show');
+                    renderDots(pin1Container, pin1, true);
+                    return;
+                }
+
+                if (pin2.length !== 6 || pin2 !== pin1) {
+                    pinErrorText.textContent = 'Les deux codes PIN ne correspondent pas.';
+                    pinError.classList.add('show');
+                    renderDots(pin2Container, pin2, true);
+                    return;
+                }
+
+                if (!termsCheckbox.checked) {
+                    pinErrorText.textContent = 'Veuillez accepter les Conditions d\'utilisation et la Politique de confidentialité.';
+                    pinError.classList.add('show');
+                    return;
+                }
+
+                // Tout est valide : sauvegarde du code PIN et compte créé
+                localStorage.setItem('beninpay_pin', pin1);
+                window.location.href = '../tableau_de_bord/code.html';
+            });
+        });
+    </script>
+</body>
+
+</html>
